@@ -24,7 +24,7 @@ api.getProfile('yourNameHere').then(p => {
 
 # Data Returned
 
-`Profile#getStats()`
+`Profile#getStats()
 ```js
 {
     Region: 'oc',
@@ -105,8 +105,7 @@ api.getProfile('yourNameHere').then(p => {
 Profile {
   platformId: 4,
   AccountId: 'account.7ff6779021c4433eb2e31917663c4bdd',
-  Avatar: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f9/f98f47aa924724b91aa6732ef9
-2fd2c11716f368.jpg',
+  Avatar: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f9/f98f47aa924724b91aa6732ef92fd2c11716f368.jpg',
   selectedRegion: 'agg',
   defaultSeason: '2017-pre4',
   seasonDisplay: 'Early Access Season #4',
