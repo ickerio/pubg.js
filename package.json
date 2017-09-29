@@ -1,0 +1,27 @@
+{
+  "name": "pubg.js",
+  "version": "1.0.0",
+  "description": "A Playerunknown's Battlegrounds JavaScript API Wrapper",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ickerio/pubg.js.git"
+  },
+  "keywords": [
+    "pubg",
+    "api",
+    "wrapper"
+  ],
+  "author": "Harry Ickeringill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ickerio/pubg.js/issues"
+  },
+  "homepage": "https://github.com/ickerio/pubg.js#readme",
+  "dependencies": {
+    "snekfetch": "^3.4.1"
+  }
+}
