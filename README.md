@@ -10,6 +10,9 @@
     <a href="https://nodei.co/npm/pubg.js/"><img src="https://nodei.co/npm/pubg.js.png?downloads=true&stars=true" alt="NPM info"/></a>
 </div>
 
+### Documentation
+The full documenation of everything covered in the wrapper can be found [**here**](https://github.com/ickerio/pubg.js/blob/master/Documentation.md)
+
 # Setup and Installation
 1. Register and signup at [pubgtracker](https://pubgtracker.com/)
 2. Navigate to the [api page](https://pubgtracker.com/site-api) and generate a key
@@ -22,66 +25,17 @@
 const pubgClient = require('pubg.js');
 
 const client = new pubgClient('yourKey');
-client.getProfile('ickerio').then(p => {
 
-    const myStat = p.getStats({
+client.getProfile('ickerio').then(profile => {
+
+    profile.getStats({
         region: 'oc',
         season: '2017-pre4',
         match: 'solo'
-    });
-    console.log(myStat);
+    }).getItem('RoundsPlayed');
+
 });
 ```
 
-# Documentation
-## pubgClient
-| Data | Description              |
-|------|--------------------------|
-| key  | API key parsed to client |
-
-### pubgClient#getProfile(username)
-Returns a `profile` from their pubg name
-
-| Parameter | Type   | Optional | Default | Description    |
-|-----------|--------|----------|---------|----------------|
-| username  | string |          | *none*  | PUBG username  |
-
-### pubgClient#getAccount(steamId)
-Returns an `account` with the specified steamId
-
-| Parameter | Type   | Optional | Default | Description                |
-|-----------|--------|----------|---------|----------------------------|
-| steamId   | string |          | *none*  | 64 bit Steam ID of account |
-
-## profile
-| Data           | Description                       |
-|----------------|-----------------------------------|
-| platformId     | `Unknown`                         |
-| accountId      | `Unknown`                         |
-| avatar         | URL of steam avatar used in game  |
-| selectedRegion | Server region                     |
-| defaultSeason  | Default selection of season       |
-| seasonDisplay  | Display text for season           |
-| lastUpdated    | Time of last profile update       |
-| playerName     | Unique PUBG name                  |
-| pubgTrackerId  | Unique ID of player issued by API |
-
-### profile#getStats(options)
-Returns `profileStats` for a profile
-
-| Parameter      | Type   | Optional | Default        | Description     |
-|----------------|--------|----------|----------------|-----------------|
-| options        | object | Yes      |                |                 |
-| options.region | string |          | selectedRegion | Region of match |
-| options.season | string |          | defaultSeason  | Season of match |
-| options.match  | string |          | 'solo'         | Match type      |
-
-## account
-| Data        | Description                         |
-|-------------|-------------------------------------|
-| accountId   | API key parsed to client            |
-| nickname    | PUBG name tied to the steam account |
-| avatarUrl   | Image URL of Steam account          |
-| steamName   | Display name for Steam              |
-| state       | State of user in PUBG               |
-| inviteAllow | Current invite settings in PUBG     |
+# Issues
+If you run into any issues, problems or have any queries or concerns please do not hesitate to open an issue, pull request or message me on Discord at `rabb#7134`
