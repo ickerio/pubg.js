@@ -7,7 +7,7 @@ class ProfileStats {
     }
 
     getItem(name) {
-        if (!name || typeof name === 'string') return;
+        if (!name || !typeof name === 'string') return;
         return this.stats.find(s => s.name === name);
     }
 
