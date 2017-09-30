@@ -16,7 +16,10 @@ class pubgClient {
         return new Promise((resolve, reject) => {
             snekfetch.get(`https://pubgtracker.com/api/profile/pc/${username}`)
                 .set('TRN-Api-Key', this.key)
-                .then(r => resolve(new Profile(r.body)))
+                .then(r => {
+                    if (r.body.error) reject(r.body.error);
+                    resolve(new Profile(r.body));
+                })
                 .catch(reject);
         });
     }
