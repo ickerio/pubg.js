@@ -2,7 +2,7 @@
   "name": "pubg.js",
   "version": "1.0.0",
   "description": "A Playerunknown's Battlegrounds JavaScript API Wrapper",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm run lint",
     "lint": "eslint src *.js"
