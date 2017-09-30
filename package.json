@@ -1,7 +1,7 @@
 {
   "name": "pubg.js",
   "version": "1.1.0",
-  "description": "A Playerunknown's Battlegrounds JavaScript API Wrapper",
+  "description": "A Playerunknown's Battlegrounds Node.js API Wrapper",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
