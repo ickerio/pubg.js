@@ -33,12 +33,14 @@ client.getProfile('ickerio').then(p => {
 
 ### pubgClient#getProfile(username)
 Returns a `profile` from their pubg name
+
 | Parameter | Type   | Optional | Default | Description    |
 |-----------|--------|----------|---------|----------------|
 | username  | string |          | *none*  | PUBG username  |
 
 ### pubgClient#getAccount(steamId)
 Returns an `account` with the specified steamId
+
 | Parameter | Type   | Optional | Default | Description                |
 |-----------|--------|----------|---------|----------------------------|
 | steamId   | string |          | *none*  | 64 bit Steam ID of account |
@@ -58,6 +60,7 @@ Returns an `account` with the specified steamId
 
 ### profile#getStats(options)
 Returns `profileStats` for a profile
+
 | Parameter      | Type   | Optional | Default        | Description     |
 |----------------|--------|----------|----------------|-----------------|
 | options        | object | Yes      |                |                 |
