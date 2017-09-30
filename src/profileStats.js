@@ -6,6 +6,11 @@ class ProfileStats {
         this.stats = this._structureStats(content.Stats);
     }
 
+    getItem(name) {
+        if (!name || typeof name === 'string') return;
+        return this.stats.find(s => s.name === name);
+    }
+
     _structureStats(Stats) {
         const stats = [];
         for (const stat of Object.keys(Stats)) {
