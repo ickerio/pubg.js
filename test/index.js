@@ -1,6 +1,6 @@
 const pubgClient = require('../');
 
-const client = new pubgClient('yourKey');
+const client = new pubgClient(process.env.PUBG_KEY);
 client.getProfile('ickerio').then(p => {
 
     const myStat = p.getStats({
