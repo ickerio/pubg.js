@@ -24,5 +24,8 @@
   "homepage": "https://github.com/ickerio/pubg.js#readme",
   "dependencies": {
     "snekfetch": "^3.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0"
   }
 }
