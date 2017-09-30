@@ -1,4 +1,4 @@
-class ProfileStats {
+class Stats {
     constructor(content) {
         this.region = content.Region;
         this.season = content.Season;
@@ -32,4 +32,4 @@ class ProfileStats {
     }
 }
 
-module.exports = ProfileStats;
+module.exports = Stats;

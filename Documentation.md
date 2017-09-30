@@ -8,9 +8,9 @@
 - [Profile](#Profile)
     * [getStats()](#ProfilegetStatsoptions)
 - [Account](#Account)
-- [ProfileStats](#ProfileStats)
-    * [getItem()](#ProfileStatsgetItemname)
-- [ProfileMatch](#ProfileMatch)
+- [Stats](#Stats)
+    * [getItem()](#StatsgetItemname)
+- [Match](#Match)
 
 
 ## pubgClient
@@ -44,7 +44,7 @@
     - `region` <[String]> region: 'agg', 'as', 'eu', 'na', 'oc', 'sa', 'sea'. Defaults to `selectedRegion`
     - `season` <[String]> season: '2017-pre1', '2017-pre2', '2017-pre3', '2017-pre4'. Defaults to `defaultSeason`
     - `match` <[String]> 'solo', 'duo', 'squad', 'solo-fpp', 'duo-fpp', 'squad-fpp' Defaults to 'solo'
-- Returns: <[ProfileStats]>
+- Returns: <[Stats]>
 
 ## Account
 | Data        | Description                         |
@@ -56,7 +56,7 @@
 | state       | State of user in PUBG               |
 | inviteAllow | Current invite settings in PUBG     |
 
-## ProfileStats
+## Stats
 | Data   | Description                 |
 |--------|-----------------------------|
 | region | The region of the stats     |
@@ -64,7 +64,7 @@
 | match  | The match type of the stats |
 | stats  | An <[Array]> of the stats   |
 
-#### ProfileStats#getItem(name)
+#### Stats#getItem(name)
 - `name` <[String]> Type of stat to find
 - Returns: <[Object]> of full stats
     - `fullName` <[String]>
@@ -77,7 +77,7 @@
     - `percentile` <[number]>
     - `displayValue` <[String]>
 
-## ProfileMatch
+## Match
 Coming soon...
 
 
@@ -88,5 +88,5 @@ Coming soon...
 
 [Profile]: #Profile "Profile"
 [Account]: #Account "Account"
-[ProfileStats]: #ProfileStats "ProfileStats"
-[ProfileMatch]: #ProfileMatch "ProfileMatch"
+[Stats]: #Stats "Stats"
+[Match]: #Match "Match"

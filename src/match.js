@@ -1,4 +1,4 @@
-class ProfileMatch {
+class Match {
     constructor(content) {
         this.id = content.Id;
         this.updated = content.Updated;
@@ -34,4 +34,4 @@ class ProfileMatch {
     }
 }
 
-module.exports = ProfileMatch;
+module.exports = Match;

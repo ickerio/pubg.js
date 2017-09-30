@@ -1,5 +1,5 @@
-const ProfileStats = require('./profileStats.js');
-const ProfileMatch = require('./profileMatch.js');
+const Stats = require('./stats.js');
+const Match = require('./match.js');
 
 class Profile {
     constructor(content) {
@@ -12,8 +12,8 @@ class Profile {
         this.lastUpdated = content.LastUpdated;
         this.playerName = content.PlayerName;
         this.pubgTrackerId = content.PubgTrackerId;
-        this.stats = content.Stats.map(stats => new ProfileStats(stats));
-        this.matchHistory = content.MatchHistory.map(match => new ProfileMatch(match));
+        this.stats = content.Stats.map(stats => new Stats(stats));
+        this.matchHistory = content.MatchHistory.map(match => new Match(match));
     }
 
     getStats(options = {}) {

@@ -1,1 +1,1 @@
-module.exports = require('./src/pubgClient.js');
+module.exports = require('./src/client.js');
