@@ -1,14 +1,19 @@
 <div align="center">
-    <img alt="pubg.js" src="https://i.imgur.com/YzaajHA.png" width="250"/>
-</div>
-<div align="center">
-    <a href="https://travis-ci.org/ickerio/pubg.js"><img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master"></a>
+    <p>
+        <img alt="pubg.js" src="https://i.imgur.com/YzaajHA.png" width="250"/>
+    </p>
+    <p>
+        <a href="https://travis-ci.org/ickerio/pubg.js"><img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master"></a>
+        <a href="https://www.npmjs.com/package/pubg.js"><img src="https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600" alt="NPM downloads" /></a>
+        <a href="https://david-dm.org/ickerio/pubg.js"><img src="https://img.shields.io/david/ickerio/pubg.js.svg?maxAge=3600" alt="Dependencies" /></a>
+    </p>
+    <a href="https://nodei.co/npm/pubg.js/"><img src="https://nodei.co/npm/pubg.js.png?downloads=true&stars=true" alt="NPM info"/></a>
 </div>
 
 # Setup and Installation
 1. Register and signup at [pubgtracker](https://pubgtracker.com/)
 2. Navigate to the [api page](https://pubgtracker.com/site-api) and generate a key
-3. Install **pubg.js** `npm install https://github.com/ickerio/pubg.js --save`
+3. Install **pubg.js** `npm install pubg.js --save`
 4. When using the wrapper, parse your generated key when creating the client
 
 
