@@ -49,7 +49,7 @@ Returns an `account` with the specified steamId
 | Data           | Description                       |
 |----------------|-----------------------------------|
 | platformId     | `Unknown`                         |
-| accountId      | Steam account ID                  |
+| accountId      | `Unknown`                         |
 | avatar         | URL of steam avatar used in game  |
 | selectedRegion | Server region                     |
 | defaultSeason  | Default selection of season       |
