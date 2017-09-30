@@ -1,6 +1,9 @@
-<p align="center">
+<div align="center">
     <img alt="pubg.js" src="https://i.imgur.com/YzaajHA.png" width="250"/>
-</p>
+</div>
+<div align="center">
+    <a href="https://travis-ci.org/ickerio/pubg.js"><img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master"></a>
+</div>
 
 # Setup and Installation
 1. Register and signup at [pubgtracker](https://pubgtracker.com/)
@@ -69,4 +72,11 @@ Returns `profileStats` for a profile
 | options.match  | string |          | 'solo'         | Match type      |
 
 ## account
-Coming soon...
+| Data        | Description                         |
+|-------------|-------------------------------------|
+| accountId   | API key parsed to client            |
+| nickname    | PUBG name tied to the steam account |
+| avatarUrl   | Image URL of Steam account          |
+| steamName   | Display name for Steam              |
+| state       | State of user in PUBG               |
+| inviteAllow | Current invite settings in PUBG     |
