@@ -10,4 +10,4 @@ client.getProfile('ickerio').then(profile => {
         match: 'solo'
     }).getItem('RoundsPlayed');
 
-});
+}).catch(console.error);
