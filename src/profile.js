@@ -1,4 +1,4 @@
-const ProfileStats = require('./ProfileStats.js');
+const ProfileStats = require('./profileStats.js');
 const ProfileMatch = require('./profileMatch.js');
 
 class Profile {
