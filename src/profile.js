@@ -13,7 +13,7 @@ class Profile {
         this.playerName = content.PlayerName;
         this.pubgTrackerId = content.PubgTrackerId;
         this.stats = content.Stats.map(stats => new Stats(stats));
-        this.matchHistory = content.MatchHistory.map(match => new Match(match));
+        if (content.MatchHistory) this.matchHistory = content.MatchHistory.map(match => new Match(match));
     }
 
     getStats(options = {}) {
