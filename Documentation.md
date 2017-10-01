@@ -2,15 +2,15 @@
 **Version 1.0**
 
 **Table Of Contents**
-- [pubgClient](#pubgClient)
-    * [getProfile()](#pubgClientgetProfileusername)
-    * [getAccount()](#pubgClientgetAccountsteamId)
-- [Profile](#Profile)
-    * [getStats()](#ProfilegetStatsoptions)
-- [Account](#Account)
-- [Stats](#Stats)
-    * [getItem()](#StatsgetItemname)
-- [Match](#Match)
+- [pubgClient](#pubgclient)
+    * [getProfile()](#pubgclientgetprofileusername)
+    * [getAccount()](#pubgclientgetaccountsteamid)
+- [Profile](#profile)
+    * [getStats()](#profilegetstatsoptions)
+- [Account](#account)
+- [Stats](#stats)
+    * [getItem()](#statsgetitemname)
+- [Match](#match)
 
 
 ## pubgClient
@@ -86,7 +86,7 @@ Coming soon...
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array "Array"
 [number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type "Number"
 
-[Profile]: #Profile "Profile"
-[Account]: #Account "Account"
-[Stats]: #Stats "Stats"
-[Match]: #Match "Match"
+[Profile]: #profile "Profile"
+[Account]: #account "Account"
+[Stats]: #stats "Stats"
+[Match]: mMatch "Match"
