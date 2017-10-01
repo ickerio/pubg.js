@@ -1,0 +1,13 @@
+# Packages
+node_modules/
+
+# Log files
+logs/
+*.log
+
+# NPM ignore
+.eslintrc.json
+.gitignore
+.travis.yml
+Documentation.md
+test/
