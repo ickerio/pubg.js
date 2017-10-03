@@ -11,7 +11,7 @@
 </div>
 
 ### Documentation
-The full documenation of everything covered in the wrapper can be found [**here**](https://github.com/ickerio/pubg.js/blob/master/Documentation.md)
+The full documenation of everything covered in the wrapper can be found [**here**](https://github.com/ickerio/pubg.js/blob/master/docs/index.md)
 
 # Setup and Installation
 1. Register and signup at [pubgtracker](https://pubgtracker.com/)
@@ -28,11 +28,13 @@ const client = new pubgClient('yourKey');
 
 client.getProfile('ickerio')
     .then(profile => {
-        profile.getStats({
+        const myRoundsPlayed = profile.getStats({
             region: 'oc',
             season: '2017-pre4',
             match: 'solo'
         }).getItem('RoundsPlayed');
+
+        console.log(myRoundsPlayed);
     })
     .catch(console.error);
 ```
