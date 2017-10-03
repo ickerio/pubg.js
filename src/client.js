@@ -33,7 +33,7 @@ class pubgClient {
             snekfetch.get(url)
                 .set('TRN-Api-Key', this.key)
                 .then(r => {
-                    if (r.body.error) reject({error: r.body.message});
+                    if (r.body.error) reject(new Error(r.body.error));
                     resolve(r.body);
                 })
                 .catch(reject);
