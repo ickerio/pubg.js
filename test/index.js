@@ -1,14 +1,12 @@
 const pubgClient = require('../');
 
-const client = new pubgClient(process.env.PUBG_KEY);
+const client = new pubgClient(process.env.PUBG_KEY || 'c9ede33c-74d7-4c4a-978c-2a4807da2cd7');
 
 console.log(`Testing version ${client.version} of pubg.js`);
 
-// Test 1: getProfile
 client.getProfile('ickerio')
     .then(() => console.log('Test 1: Success'));
 
-// Test 2: getStats of profile
 client.getProfile('ickerio')
     .then(profile => {
         profile.getStats({
@@ -19,6 +17,11 @@ client.getProfile('ickerio')
     })
     .then(() => console.log('Test 2: Successs'));
 
-// Test 3: getAccount
+client.getProfile('usernameThatDefinatelyWontExist372')
+    .catch(() => console.log('Test 3: Success'));
+
 client.getAccount('76561198114629752')
-    .then(() => console.log('Test 3: Success'));
+    .then(() => console.log('Test 4: Success'));
+
+client.getAccount('12343211231313213123123123')
+    .catch(() => console.log('Test 5: Success'));
