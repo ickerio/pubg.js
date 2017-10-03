@@ -26,15 +26,15 @@ const pubgClient = require('pubg.js');
 
 const client = new pubgClient('yourKey');
 
-client.getProfile('ickerio').then(profile => {
-
-    profile.getStats({
-        region: 'oc',
-        season: '2017-pre4',
-        match: 'solo'
-    }).getItem('RoundsPlayed');
-
-});
+client.getProfile('ickerio')
+    .then(profile => {
+        profile.getStats({
+            region: 'oc',
+            season: '2017-pre4',
+            match: 'solo'
+        }).getItem('RoundsPlayed');
+    })
+    .catch(console.error);
 ```
 
 # Issues
