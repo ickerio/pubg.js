@@ -1,6 +1,8 @@
+const snekfetch = require('snekfetch');
+const Package = require('../package.json');
+
 const Profile = require('./profile.js');
 const Account = require('./account.js');
-const snekfetch = require('snekfetch');
 
 class pubgClient {
     constructor(key) {
@@ -10,6 +12,7 @@ class pubgClient {
         }
 
         this.key = key;
+        this.version = Package.version;
     }
 
     getProfile(username) {

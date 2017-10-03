@@ -14,9 +14,10 @@
 
 
 ## pubgClient
-| Data | Description              |
-|------|--------------------------|
-| key  | API key parsed to client |
+| Data    | Description              |
+|---------|--------------------------|
+| key     | API key parsed to client |
+| version | The version of pubg.js   |
 
 #### pubgClient#getProfile(username)
 - `username` <[String]> PUBG unique name
