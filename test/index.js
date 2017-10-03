@@ -9,13 +9,15 @@ client.getProfile('ickerio')
     .then(() => console.log('Test 1: Success'));
 
 // Test 2: getStats of profile
-client.getProfile('ickerio').then(profile => {
-    profile.getStats({
-        region: 'oc',
-        season: '2017-pre4',
-        match: 'solo'
-    }).getItem('RoundsPlayed');
-}).then(() => console.log('Test 2: Successs'));
+client.getProfile('ickerio')
+    .then(profile => {
+        profile.getStats({
+            region: 'oc',
+            season: '2017-pre4',
+            match: 'solo'
+        }).getItem('RoundsPlayed');
+    })
+    .then(() => console.log('Test 2: Successs'));
 
 // Test 3: getAccount
 client.getAccount('76561198114629752')
