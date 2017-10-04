@@ -79,7 +79,7 @@
     - `displayValue` <[String]>
 
 ## Match
-Coming soon...
+This has been deprecated, will be removed in later versions.
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String "String"
