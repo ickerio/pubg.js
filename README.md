@@ -3,9 +3,10 @@
         <img alt="pubg.js" src="https://i.imgur.com/YzaajHA.png" width="250"/>
     </p>
     <p>
-        <a href="https://travis-ci.org/ickerio/pubg.js"><img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master"></a>
-        <a href="https://www.npmjs.com/package/pubg.js"><img src="https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600" alt="NPM downloads" /></a>
+        <a href="https://travis-ci.org/ickerio/pubg.js"><img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master" alt="Travis-ci"></a>
+        <a href="https://www.npmjs.com/package/pubg.js"><img src="https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600" alt="NPM Downloads" /></a>
         <a href="https://david-dm.org/ickerio/pubg.js"><img src="https://img.shields.io/david/ickerio/pubg.js.svg?maxAge=3600" alt="Dependencies" /></a>
+        <a href="https://npm.runkit.com/pubg.js"><img src="https://badge.runkitcdn.com/pubg.js.svg" alt="Try pubg.js on RunKit"/></a>
     </p>
     <a href="https://nodei.co/npm/pubg.js/"><img src="https://nodei.co/npm/pubg.js.png?downloads=true&stars=true" alt="NPM info"/></a>
 </div>
