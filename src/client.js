@@ -1,5 +1,5 @@
 const snekfetch = require('snekfetch');
-const Package = require('../package.json');
+const { version } = require('../package.json');
 
 const Profile = require('./profile.js');
 const Account = require('./account.js');
@@ -12,7 +12,12 @@ class pubgClient {
         }
 
         this.key = key;
-        this.version = Package.version;
+        this.version = version;
+
+        this._headers = {
+            'User-Agent': `pubg.js v${version} (https://github.com/ickerio/pubg.js)`,
+            'TRN-Api-Key': this.key
+        };
     }
 
     getProfile(username) {
@@ -34,7 +39,7 @@ class pubgClient {
     _apiRequest(url) {
         return new Promise((resolve, reject) => {
             snekfetch.get(url)
-                .set('TRN-Api-Key', this.key)
+                .set(this._headers)
                 .then(r => {
                     if (r.body.error) reject(r.body.message || r.body.error);
                     resolve(r.body);
