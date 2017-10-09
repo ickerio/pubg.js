@@ -11,6 +11,10 @@
 - [Stats](#stats)
     * [getItem()](#statsgetitemname)
 - [Match](#match)
+- [API Definitions](#api-definitions)
+    * [Regions](#regions)
+    * [Seasons](#seasons)
+    * [Matches](#matches)
 
 
 ## pubgClient
@@ -42,9 +46,9 @@
 
 #### Profile#getStats(options)
 - `options` <[Object]>
-    - `region` <[String]> region: 'agg', 'as', 'eu', 'na', 'oc', 'sa', 'sea'. Defaults to `selectedRegion`
-    - `season` <[String]> season: '2017-pre1', '2017-pre2', '2017-pre3', '2017-pre4'. Defaults to `defaultSeason`
-    - `match` <[String]> 'solo', 'duo', 'squad', 'solo-fpp', 'duo-fpp', 'squad-fpp' Defaults to 'solo'
+    - `region` <[String]> region: [see here](#regions) Defaults to `selectedRegion`
+    - `season` <[String]> season: [see here](#seasons) Defaults to `defaultSeason`
+    - `match` <[String]> match: [see here](#matches) Defaults to 'solo'
 - Returns: <[Stats]>
 
 ## Account
@@ -79,7 +83,35 @@
     - `displayValue` <[String]>
 
 ## Match
-This has been deprecated, will be removed in later versions.
+This has been deprecated due to the API, will be removed in later versions.
+
+## API Definitions
+Definitions and examples of some of the API
+
+#### Regions
+- `agg` All regions
+- `as` Asia
+- `eu` Europe
+- `na` North America
+- `oc` Oceania
+- `sa` South America
+- `sea` South East Asia
+
+#### Seasons
+- `2017-pre1` 2017 Early Access Season 1
+- `2017-pre2` 2017 Early Access Season 2
+- `2017-pre3` 2017 Early Access Season 3
+- `2017-pre4` 2017 Early Access Season 4
+
+#### Matches
+- `solo` Solo
+- `duo` Duo
+- `squad` Squad
+- `solo-fpp` Solo first person
+- `duo-fpp` Duo first person
+- `squad-fpp` Squad first person
+
+
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String "String"
