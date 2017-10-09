@@ -1,6 +1,6 @@
 const pubgClient = require('../');
 
-const client = new pubgClient(process.env.PUBG_KEY || 'c9ede33c-74d7-4c4a-978c-2a4807da2cd7');
+const client = new pubgClient(process.env.PUBG_KEY);
 
 console.log(`Testing version ${client.version} of pubg.js`);
 
