@@ -31,7 +31,10 @@ class pubgClient {
     getAccount(id) {
         return new Promise((resolve, reject) => {
             this._apiRequest(`https://pubgtracker.com/api/search?steamId=${id}`)
-                .then(body => resolve(new Account(body)))
+                .then(body => {
+                    if (body instanceof Buffer) reject('User does not exist or another error occoured');
+                    resolve(new Account(body));
+                })
                 .catch(reject);
         });
     }
