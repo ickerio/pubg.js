@@ -16,7 +16,7 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into out/
-# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
+# Create a new empty branch if webpack doesn't exist yet (should only happen on first deply)
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
@@ -25,8 +25,11 @@ cd ..
 # Clean out existing contents
 rm -rf out/**/* || exit 0
 
+# Build webpack
+npm run webpack
+
 # Now let's go have some fun with the cloned repo
-cd out
+cd webpack
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
@@ -39,7 +42,7 @@ fi
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add -A .
-git commit -m "Deploy to GitHub Pages: ${SHA}"
+git commit -m "Deploy to Webpack: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
