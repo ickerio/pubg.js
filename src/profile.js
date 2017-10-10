@@ -17,7 +17,7 @@ class Profile {
     }
 
     getStats(options = {}) {
-        Object.assign({
+        options = Object.assign({
             region: this.selectedRegion,
             season: this.defaultSeason,
             match: 'solo'
