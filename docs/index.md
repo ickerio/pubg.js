@@ -38,7 +38,7 @@
 | accountId      | `Unknown`                         |
 | avatar         | URL of steam avatar used in game  |
 | selectedRegion | Server region                     |
-| defaultSeason  | Default selection of season       |
+| defaultSeason  | Current season in PUBG            |
 | seasonDisplay  | Display text for season           |
 | lastUpdated    | Time of last profile update       |
 | playerName     | Unique PUBG name                  |
