@@ -4,6 +4,13 @@ node_js:
 sudo: false
 install:
   - npm install
-script:
-  - npm test
-  - node test/index.js
+jobs:
+  include:
+    - stage: test
+      script: npm run test
+    - stage: deploy
+      script: bash ./travis/deploy.sh
+env:
+  global:
+    - ENCRYPTION_LABEL: "9e33f2875b76"
+    - COMMIT_AUTHOR_EMAIL: "harry.ickeringill@gmail.com"
