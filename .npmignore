@@ -11,3 +11,4 @@ logs/
 .travis.yml
 Documentation.md
 test/
+docs/
