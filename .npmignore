@@ -9,6 +9,4 @@ logs/
 .eslintrc.json
 .gitignore
 .travis.yml
-Documentation.md
 test/
-docs/
