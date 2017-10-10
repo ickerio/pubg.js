@@ -31,13 +31,13 @@ const client = new pubgClient('yourKey');
 
 client.getProfile('ickerio')
     .then(profile => {
-        const myRoundsPlayed = profile.getStats({
+        const myRank = profile.getStats({
             region: 'oc',
             season: '2017-pre4',
             match: 'solo'
-        }).getItem('RoundsPlayed');
+        }).getItem('Rating').rank;
 
-        console.log(myRoundsPlayed);
+        console.log(`My ranking in solo, oceania this season is ${myRank}`);
     })
     .catch(console.error);
 ```
