@@ -10,3 +10,4 @@ logs/
 .gitignore
 .travis.yml
 test/
+travis/
