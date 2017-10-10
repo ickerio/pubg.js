@@ -1,6 +1,6 @@
 {
   "name": "pubg.js",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A Playerunknown's Battlegrounds Node.js API Wrapper",
   "main": "index.js",
   "scripts": {
