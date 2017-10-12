@@ -9,5 +9,5 @@ logs/
 .eslintrc.json
 .gitignore
 .travis.yml
+webpack.config.js
 test/
-travis/
