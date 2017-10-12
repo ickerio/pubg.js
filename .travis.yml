@@ -7,7 +7,7 @@ install:
 jobs:
   include:
     - stage: Test
-    - script: npm run test
+      script: npm run test
     - stage: Webpack Release
       script: npm run webpack
       deploy:
@@ -16,5 +16,6 @@ jobs:
         github_token: $GITHUB_TOKEN
         local_dir: out
         target_branch: webpack
+        name: Travis Deploy Bot
         on:
           branch: master
