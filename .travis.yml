@@ -4,17 +4,14 @@ node_js:
 sudo: false
 install:
 - npm install
-jobs:
-  include:
-  - stage: test
-    script: npm run test
-  - stage: deploy
-    script: npm run webpack
+script:
+  - npm test
+before_deploy: npm run webpack
 deploy:
   provider: releases
   api_key:
     secure: rIvHPp0RchCkupq2YKpZs+Stim6XuJCybYef34m2pn4Wo6q4nZGCvg20hrNtSI16k179Y0anwzzODN2HULF2ELGF37Hb2jPIoktuVIxeuKBKGeBw+16OhK8g3qo9qkKRY6jAjU6XVz2m0Bn/CYSc+genFpVuQ6YDrzteJv7bo7QZYyxb2KbhIcLT7nLQgv4fKRkRw4hhqUXQ3zlAsfS7tEeiauL5B8tFugEdQSYhDMMzDp0zjv+ulnl4NzrrCVoCn2/CtmSNTf8J8VAC8MN3NeOR5g0wgIKtiWQkvwALV3aknGfJeyQJk4JqAbarpiyDTiM/cP/lXhuUSTI8eaiioMQvztaxthNrOJnnBhO4nfPbV3YaAPWJAvT0Xg+BG1TZUPfXdgUH0S92mSVoS1p5p25GEM8BfL6gJADgB7XuJlTMj03rfZeKHdKyy/LnQnrfxuxobhxU6Wwh3Ze4pQe6bFcQwIQ/0fwWyPsT+cWiZd6oCfpA8RuuXS8UYJlL334rM1j4E+L95ETfdhv0iAXYmm3etGagsjXK41PDbJatMc4/IcF0CQ9lSVjBigswi+reomoKElV/EIDy6NOLktqQWKoQccteVRq5d0ZKEyVTDaQD9gruNgE3P9H3eWAOigQ4Yzo/31b9Q+eE/ZDbsltTtGNfL8LllH/2zoS9Qs6U+ss=
-  file: out/pubg.js
+  file: out/*
   skip_cleanup: true
   on:
-    repo: ickerio/pubg.js
+    tags: true

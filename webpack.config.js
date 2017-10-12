@@ -5,8 +5,7 @@ module.exports = {
     entry: './index.js',
     output: {
         path: __dirname,
-        //filename: `out/pubg.${require('./package.json').version}.js`
-        filename: 'out/pubg.js'
+        filename: `out/pubg.${require('./package.json').version}.js`
     },
     stats: {
         colors: true
