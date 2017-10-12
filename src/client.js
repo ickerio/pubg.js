@@ -1,5 +1,5 @@
 const snekfetch = require('snekfetch');
-const { version } = require('../package.json');
+const Package = require('../package.json');
 
 const Profile = require('./profile.js');
 const Account = require('./account.js');
@@ -12,10 +12,10 @@ class pubgClient {
         }
 
         this.key = key;
-        this.version = version;
+        this.version = Package.version;
 
         this._headers = {
-            'User-Agent': `pubg.js v${version} (https://github.com/ickerio/pubg.js)`,
+            'User-Agent': `pubg.js v${Package.version} (${Package.homepage})`,
             'TRN-Api-Key': this.key
         };
     }
