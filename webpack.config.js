@@ -5,7 +5,9 @@ module.exports = {
     entry: './src/client.js',
     output: {
         path: __dirname,
-        filename: 'out/pubg.js'
+        filename: 'out/pubg.js',
+        library: 'pubgClient',
+        libraryTarget: 'window',
     },
     stats: {
         colors: true
@@ -17,6 +19,6 @@ module.exports = {
             output: { comments: false },
         },
     })),
-    //new webpack.DefinePlugin({ 'global.GENTLY': false }),
+    new webpack.DefinePlugin({ 'global.GENTLY': false }),
     new webpack.optimize.ModuleConcatenationPlugin()]
 };
