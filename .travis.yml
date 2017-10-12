@@ -8,6 +8,8 @@ jobs:
   include:
   - stage: test
     script: npm run test
+  - stage: deploy
+    script: npm run webpack
 deploy:
   provider: releases
   api_key:
