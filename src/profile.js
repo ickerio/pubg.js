@@ -9,7 +9,7 @@ class Profile {
         this.selectedRegion = content.selectedRegion;
         this.defaultSeason = content.defaultSeason;
         this.seasonDisplay = content.seasonDisplay;
-        this.lastUpdated = content.LastUpdated;
+        this.lastUpdated = new Date(content.LastUpdated);
         this.playerName = content.PlayerName;
         this.pubgTrackerId = content.PubgTrackerId;
         this.stats = content.Stats.map(stats => new Stats(stats));
