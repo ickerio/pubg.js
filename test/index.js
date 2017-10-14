@@ -1,8 +1,8 @@
-const pubgClient = require('../');
+const pubg = require('../');
 
-const client = new pubgClient(process.env.PUBG_KEY);
+const client = new pubg.Client(process.env.PUBG_KEY);
 
-console.log(`Testing version ${client.version} of pubg.js`);
+console.log(`Testing version ${pubg.version} of pubg.js`);
 
 client.getProfile('ickerio')
     .then(() => console.log('Test 1: Success'));

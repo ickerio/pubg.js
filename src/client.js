@@ -4,7 +4,7 @@ const Package = require('../package.json');
 const Profile = require('./profile.js');
 const Account = require('./account.js');
 
-class pubgClient {
+class Client {
     constructor(key) {
 
         if (!key) {
@@ -12,7 +12,6 @@ class pubgClient {
         }
 
         this.key = key;
-        this.version = Package.version;
 
         this._headers = {
             'User-Agent': `pubg.js v${Package.version} (${Package.homepage})`,
@@ -53,4 +52,4 @@ class pubgClient {
 
 }
 
-module.exports = pubgClient;
+module.exports = Client;

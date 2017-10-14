@@ -2,7 +2,7 @@
 **Version 1.0**
 
 **Table Of Contents**
-- [pubgClient](#pubgclient)
+- [Client](#Client)
     * [getProfile()](#pubgclientgetprofileusername)
     * [getAccount()](#pubgclientgetaccountsteamid)
 - [Profile](#profile)
@@ -17,17 +17,16 @@
     * [Matches](#matches)
 
 
-## pubgClient
+## Client
 | Data    | Description              |
 |---------|--------------------------|
 | key     | API key parsed to client |
-| version | The version of pubg.js   |
 
-#### pubgClient#getProfile(username)
+#### Client#getProfile(username)
 - `username` <[String]> PUBG unique name
 - Returns: <[Profile]>
 
-#### pubgClient#getAccount(steamId)
+#### Client#getAccount(steamId)
 - `steamId` <[String]> 64 bit Steam Id
 - Returns: <[Account]>
 

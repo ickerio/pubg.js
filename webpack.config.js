@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: __dirname,
         filename: 'out/pubg.js',
-        library: 'pubgClient',
+        library: 'pubg',
         libraryTarget: 'window',
     },
     stats: {

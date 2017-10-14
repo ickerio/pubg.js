@@ -25,9 +25,9 @@ The full documenation of everything covered in the wrapper can be found [**here*
 
 # Example
 ```js
-const pubgClient = require('pubg.js');
+const pubg = require('pubg.js');
 
-const client = new pubgClient('yourKey');
+const client = new pubg.Client('yourKey');
 
 client.getProfile('ickerio')
     .then(profile => {
@@ -45,7 +45,7 @@ client.getProfile('ickerio')
 # Web
 > At the moment I'm having a CORS issue with snekfetch, am currently trying to resolve it.
 
-Yep, you can also use me on the web! You can find the latest version in the [webpack](https://github.com/ickerio/pubg.js/tree/webpack) branch. To use it, either chose one of these options and `pubgClient` will be defined in the window scope.
+Yep, you can also use me on the web! You can find the latest version in the [webpack](https://github.com/ickerio/pubg.js/tree/webpack) branch. To use it, either chose one of these options and `pubg` will be defined in the window scope.
  - [Download it](https://raw.githubusercontent.com/ickerio/pubg.js/webpack/pubg.js)
  - [Production](https://cdn.rawgit.com/ickerio/pubg.js/webpack/pubg.js)
  - [Development](https://rawgit.com/ickerio/pubg.js/webpack/pubg.js)
