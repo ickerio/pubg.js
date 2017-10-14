@@ -46,9 +46,9 @@ client.getProfile('ickerio')
 > At the moment I'm having a CORS issue with snekfetch, am currently trying to resolve it.
 
 Yep, you can also use me on the web! You can find the latest version in the [webpack](https://github.com/ickerio/pubg.js/tree/webpack) branch. To use it, either chose one of these options and `pubg` will be defined in the window scope.
- - [Download it](https://raw.githubusercontent.com/ickerio/pubg.js/webpack/pubg.js)
- - [Production](https://cdn.rawgit.com/ickerio/pubg.js/webpack/pubg.js)
- - [Development](https://rawgit.com/ickerio/pubg.js/webpack/pubg.js)
+ - **Download it**: [normal](https://raw.githubusercontent.com/ickerio/pubg.js/webpack/pubg.js), [minified](https://raw.githubusercontent.com/ickerio/pubg.js/webpack/pubg.min.js)
+ - **Production**: [normal](https://cdn.rawgit.com/ickerio/pubg.js/webpack/pubg.js), [minified](https://cdn.rawgit.com/ickerio/pubg.js/webpack/pubg.min.js)
+ - **Development**: [normal](https://rawgit.com/ickerio/pubg.js/webpack/pubg.js), [minified](https://rawgit.com/ickerio/pubg.js/webpack/pubg.min.js)
 
 # Issues
 If you run into any issues, problems or have any queries or concerns please do not hesitate to open an issue, pull request or message me on Discord at `rabb#7134`
