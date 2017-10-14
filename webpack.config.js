@@ -15,7 +15,6 @@ module.exports = [{
     },
     devtool: 'source-map',
     plugins: [
-        new webpack.DefinePlugin({ 'global.GENTLY': false }),
         new webpack.optimize.ModuleConcatenationPlugin()
     ]
 },
@@ -32,7 +31,6 @@ module.exports = [{
     },
     devtool: 'source-map',
     plugins: [
-        new webpack.DefinePlugin({ 'global.GENTLY': false }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         (new UglifyJSPlugin({
             uglifyOptions: {
