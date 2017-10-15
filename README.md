@@ -13,11 +13,11 @@
 
 > Not working? The API is currently experiencing a major issue, [read more!](https://pubgtracker.com/article/14/status-on-our-discord-bot-twitch-bot-and-api) Stay up to date on the issue [here](https://pubgtracker.com/).
 
-### Documentation
-The full documenation of everything covered in the wrapper can be found [**here**](https://github.com/ickerio/pubg.js/blob/master/docs/index.md)
+###### [API](docs/api.md) | [Changelog](docs/changelog.md) | [Issues](#issues)
+
 
 # Setup and Installation
-1. Register and signup at [pubgtracker](https://pubgtracker.com/)
+1. Signup at [pubgtracker](https://pubgtracker.com/)
 2. Navigate to the [api page](https://pubgtracker.com/site-api) and generate a key
 3. Install **pubg.js** `npm install pubg.js --save`
 4. When using the wrapper, parse your generated key when creating the client
