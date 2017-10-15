@@ -3,7 +3,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = [{
     // Normal
-    entry: './src/client.js',
+    entry: './index.js',
     output: {
         path: __dirname,
         filename: 'out/pubg.js',
@@ -19,7 +19,7 @@ module.exports = [{
     ]
 },
 {
-    entry: './src/client.js',
+    entry: './index.js',
     output: {
         path: __dirname,
         filename: 'out/pubg.min.js',
