@@ -32,7 +32,7 @@ module.exports = [{
     devtool: 'source-map',
     plugins: [
         new webpack.optimize.ModuleConcatenationPlugin(),
-        (new UglifyJSPlugin({
+        new UglifyJSPlugin({
             uglifyOptions: {
                 mangle: {
                     keep_classnames: true
@@ -41,7 +41,7 @@ module.exports = [{
                     comments: false
                 },
             },
-        }))
+        })
     ]
 }
 ];
