@@ -30,24 +30,15 @@ class Client {
     getAccount(id) {
         return new Promise((resolve, reject) => {
             this._apiRequest(`https://pubgtracker.com/api/search?steamId=${id}`)
-                .then(body => {
-                    if (body instanceof Buffer) reject('User does not exist or another error occoured');
-                    resolve(new Account(body));
-                })
+                .then(body => body instanceof Buffer ? reject('User does not exist or another error occoured') : resolve(new Account(body)))
                 .catch(reject);
         });
     }
 
     _apiRequest(url) {
-        return new Promise((resolve, reject) => {
-            snekfetch.get(url)
-                .set(this._headers)
-                .then(r => {
-                    if (r.body.error) reject(r.body.message || r.body.error);
-                    resolve(r.body);
-                })
-                .catch(reject);
-        });
+        return snekfetch.get(url)
+            .set(this._headers)
+            .then(r => r.body.error ? Promise.reject(r.body.message || r.body.error) : r.body);
     }
 
 }
