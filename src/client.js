@@ -20,25 +20,22 @@ class Client {
     }
 
     getProfile(username) {
-        return new Promise((resolve, reject) => {
-            this._apiRequest(`https://pubgtracker.com/api/profile/pc/${username}`)
-                .then(body => resolve(new Profile(body)))
-                .catch(reject);
-        });
+        return this._apiRequest(`https://pubgtracker.com/api/profile/pc/${username}`)
+            .then(body => new Profile(body))
+            .catch(e => Promise.reject(e));
     }
 
     getAccount(id) {
-        return new Promise((resolve, reject) => {
-            this._apiRequest(`https://pubgtracker.com/api/search?steamId=${id}`)
-                .then(body => body instanceof Buffer ? reject('User does not exist or another error occoured') : resolve(new Account(body)))
-                .catch(reject);
-        });
+        return this._apiRequest(`https://pubgtracker.com/api/search?steamId=${id}`)
+            .then(body => body instanceof Buffer ? Promise.reject('User does not exist or another error occoured') : new Account(body))
+            .catch(e => Promise.reject(e));
     }
 
     _apiRequest(url) {
         return snekfetch.get(url)
             .set(this._headers)
-            .then(r => r.body.error ? Promise.reject(r.body.message || r.body.error) : r.body);
+            .then(r => r.body.error ? Promise.reject(r.body.message || r.body.error) : r.body)
+            .catch(e => Promise.reject(e));
     }
 
 }
