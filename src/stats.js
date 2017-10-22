@@ -14,17 +14,15 @@ class Stats {
     _structureStats(Stats) {
         const stats = [];
         for (const stat of Object.keys(Stats)) {
-            const key = Stats[stat];
+            const data = Stats[stat];
             const statObj = {
-                fullName: key.label,
-                name: key.field,
-                category: key.category,
-                valueInt: key.ValueInt,
-                valueDec: key.ValueDec,
-                value: key.value,
-                rank: key.rank,
-                percentile: key.percentile,
-                displayValue: key.displayValue
+                fullName: data.label,
+                name: data.field,
+                category: data.category,
+                value: data.value,
+                rank: data.rank,
+                percentile: data.percentile,
+                displayValue: data.displayValue
             };
             stats.push(statObj);
         }

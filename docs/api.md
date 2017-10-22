@@ -125,8 +125,6 @@
     - `fullName` <[String]>
     - `name` <[String]>
     - `category` <[String]>
-    - `valueInt` <[number]>
-    - `valueDec` <[String]>
     - `value` <[String]>
     - `rank` <[String]>
     - `percentile` <[number]>
