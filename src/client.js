@@ -35,7 +35,7 @@ class Client {
         return snekfetch.get(url)
             .set(this._headers)
             .then(r => r.body.error ? Promise.reject(r.body.message || r.body.error) : r.body)
-            .catch(e => Promise.reject(e));
+            .catch(e => Promise.reject(`HTTP ${e}`));
     }
 
 }
