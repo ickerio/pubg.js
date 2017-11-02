@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/YzaajHA.png" width="250" align="right">
 
-> To use the experimental alternative API, use version 1.5.0 by installing `npm install pubg.js@1.5.0 --save` See changelog #1.5.0 for details
+> To use the experimental alternative API, use version 1.5.1 by installing `npm install pubg.js@1.5.1 --save` See changelog #1.5.1 for details
 
 ###### [API](docs/api.md) | [Changelog](docs/changelog.md) | [Issues](#issues)
 
