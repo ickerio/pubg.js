@@ -5,13 +5,9 @@ const Profile = require('./profile.js');
 const Account = require('./account.js');
 
 class Client {
-    constructor(key, options) {
+    constructor(key) {
 
-        this.options = Object.assign({
-            api: 'TRN',
-        }, options);
-
-        if (!key && this.options.api === 'TRN') {
+        if (!key) {
             throw new Error('No API key passed.');
         }
 
@@ -19,12 +15,12 @@ class Client {
 
         this._headers = {
             'User-Agent': `pubg.js v${Package.version} (${Package.homepage})`,
-            ...this.options.api === 'TRN' && {'TRN-Api-Key': this.key}
+            'TRN-Api-Key': this.key
         };
     }
 
     getProfile(username) {
-        return this._apiRequest(this.options.api === 'TRN' ? `https://pubgtracker.com/api/profile/pc/${username}` : `http://api.pubgtop.ru:81/api/search/nick/${username}`)
+        return this._apiRequest(`https://pubgtracker.com/api/profile/pc/${username}`)
             .then(body => new Profile(body))
             .catch(e => Promise.reject(e));
     }

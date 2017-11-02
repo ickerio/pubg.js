@@ -1,5 +1,8 @@
 # pubg.js Changelog
 
+### v1.5.2
+ - Reverted 1.5.2 due to issues, if you would like to use it, just install it using `npm install pubg.js@1.5.0 --save`
+
 ### v1.5.1
  - Nicer README
  - **IMPORTANT** Due to recent api issues I've added minor support to another api which is considerably more reliable with much less down time. To use it, simply add an object paramater to the initialization of the client with `api` set to `pubgtop` For example `new pubg.Client('yourKey', {api: 'pubgtop'});` The change only affects the getProfile function but shouldn't break anything. I hope once Tracker Network is fixed, we'll be able to remove this temporary fix. (You do not need to a key for the `pubgtop` option)

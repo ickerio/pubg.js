@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/YzaajHA.png" width="250" align="right">
 
-> **IMPORTANT** Due to recent api issues I've added minor support to another api which is considerably more reliable with much less down time. To use it, simply add an object paramater to the initialization of the client with `api` set to `pubgtop` For example `new pubg.Client('yourKey', {api: 'pubgtop'});` The change only affects the getProfile function but shouldn't break anything. I hope once Tracker Network is fixed, we'll be able to remove this temporary fix. (You do not need to a key for the `pubgtop` option)
+> To use the experimental alternative API, use version 1.5.0 by installing `npm install pubg.js@1.5.0 --save` See changelog #1.5.0 for details
 
 ###### [API](docs/api.md) | [Changelog](docs/changelog.md) | [Issues](#issues)
 
