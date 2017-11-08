@@ -1,5 +1,12 @@
 # pubg.js Changelog
 
+### v1.5.4
+ - Added Profile#fullAvatar for a full resolution steam avatar URL
+ - Added Account#fullAvatarUrl for a full resolution steam avatar URL (exact same as above)
+
+### v1.5.3
+ - API update: A failed account get now returns a JSON error, not http. Updated accordingly
+
 ### v1.5.2
  - Reverted 1.5.1 due to issues, if you would like to use it, just install it using `npm install pubg.js@1.5.1 --save`
 

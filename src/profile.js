@@ -6,6 +6,7 @@ class Profile {
         this.platformId = content.platformId;
         this.accountId = content.AccountId;
         this.avatar = content.Avatar;
+        this.fullAvatar = content.Avatar.replace('.jpg', '_full.jpg');
         this.selectedRegion = content.selectedRegion;
         this.defaultSeason = content.defaultSeason;
         this.seasonDisplay = content.seasonDisplay;

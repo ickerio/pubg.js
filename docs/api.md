@@ -36,6 +36,7 @@
 | platformId     | `Unknown`                         |
 | accountId      | `Unknown`                         |
 | avatar         | URL of steam avatar used in game  |
+| fullAvatar     | Full resolution of `avatar`       |
 | selectedRegion | Server region                     |
 | defaultSeason  | Current season in PUBG            |
 | seasonDisplay  | Display text for season           |
@@ -51,14 +52,15 @@
 - Returns: <[Stats]>
 
 ## Account
-| Data        | Description                         |
-|-------------|-------------------------------------|
-| accountId   | API key parsed to client            |
-| nickname    | PUBG name tied to the steam account |
-| avatarUrl   | Image URL of Steam account          |
-| steamName   | Display name for Steam              |
-| state       | State of user in PUBG               |
-| inviteAllow | Current invite settings in PUBG     |
+| Data          | Description                         |
+|---------------|-------------------------------------|
+| accountId     | API key parsed to client            |
+| nickname      | PUBG name tied to the steam account |
+| avatarUrl     | URL of steam avatar used in game    |
+| fullAvatarUrl | Full resolution of `avatarUrl`      |
+| steamName     | Display name for Steam              |
+| state         | State of user in PUBG               |
+| inviteAllow   | Current invite settings in PUBG     |
 
 ## Stats
 | Data   | Description                 |
