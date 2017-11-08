@@ -1,12 +1,11 @@
 # pubg.js [![Travis-ci](https://travis-ci.org/ickerio/pubg.js.svg?branch=master)](https://travis-ci.org/ickerio/pubg.js) [![npm downloads](https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600)](https://www.npmjs.com/package/pubg.js) [![Dependencies](https://img.shields.io/david/ickerio/pubg.js.svg?maxAge=3600)](https://david-dm.org/ickerio/pubg.js) [![RunKit](https://badge.runkitcdn.com/pubg.js.svg)](https://npm.runkit.com/pubg.js)
 
-<img src="https://i.imgur.com/YzaajHA.png" width="250" align="right">
-
-> To use the experimental alternative API, use version 1.5.1 by installing `npm install pubg.js@1.5.1 --save` See changelog #1.5.1 for details
+<img src="https://user-images.githubusercontent.com/14541442/32552867-3d44fd8e-c4d0-11e7-85d5-5199697582bd.png" width="250" align="right">
 
 ###### [API](docs/api.md) | [Changelog](docs/changelog.md) | [Issues](#issues)
 
-
+A powerful and light PlayerUnknown's Battlegrounds stats API wrapper, for Node.js and for the web.
+ 
 # Setup and Installation
 1. Signup at [pubgtracker](https://pubgtracker.com/)
 2. Navigate to the [api page](https://pubgtracker.com/site-api) and generate a key
