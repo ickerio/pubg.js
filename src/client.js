@@ -27,7 +27,7 @@ class Client {
 
     getAccount(id) {
         return this._apiRequest(`https://pubgtracker.com/api/search?steamId=${id}`)
-            .then(body => body instanceof Buffer ? Promise.reject('User does not exist or another error occoured') : new Account(body))
+            .then(body => new Account(body))
             .catch(e => Promise.reject(e));
     }
 
