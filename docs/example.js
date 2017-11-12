@@ -9,7 +9,7 @@ client.getProfile('ickerio')
     .then(profile => {
         const myRank = profile.getStats({
             region: 'oc',
-            season: '2017-pre4',
+            season: '2017-pre6',
             match: 'solo'
         }).getItem('Rating').rank;
 

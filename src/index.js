@@ -1,11 +1,11 @@
 module.exports = {
     // Base Class
-    Client: require('./client.js'),
+    Client: require('./Client'),
 
-    Profile: require('./profile.js'),
-    Account: require('./account.js'),
-    Stats: require('./stats.js'),
-    Match: require('./match.js'),
+    Profile: require('./Profile'),
+    Account: require('./Account'),
+    Stats: require('./Stats'),
+    Match: require('./Match'),
 
     version: require('../package.json').version
 };

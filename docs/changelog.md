@@ -1,5 +1,21 @@
 # pubg.js Changelog
 
+### v2.0.0
+ - **HOORAYYY!!!!** Whole new [API v2](https://pubgtracker.com/site-api), and API signups have been reopened
+ - Updated readme for new examples
+ - Added
+    - Profile#matchHistory to get match history of the profile
+    - Profile#account to get an account of the profile
+    - Account#profile to get a profile from an account
+    - Account#matchHistory to get match history from an account
+    - Client#getMatchHistory to return an array of all matches
+    - Client#getProfile now takes options of season, mode and region in an object for the stats of it
+ - Changes to Profile and Account properties, see the docs
+ - Match is no longer deprecated
+ - Filter keyword `match` or `matches` has been replaced with `mode` for Profile
+ - TIP: When getting a profile, use the `options` parameter when possible instead of Profile#getStats parameters
+ 
+
 ### v1.5.4
  - Added Profile#fullAvatar for a full resolution steam avatar URL
  - Added Account#fullAvatarUrl for a full resolution steam avatar URL (exact same as above)

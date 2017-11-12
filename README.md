@@ -13,23 +13,30 @@ A powerful and light PlayerUnknown's Battlegrounds stats API wrapper, for Node.j
 4. When using the wrapper, parse your generated key when creating the client
 
 
-# Example
+# Examples
 ```js
 const pubg = require('pubg.js');
 
 const client = new pubg.Client('yourKey');
 
+// Get a user profile by a name and print the users ranking
 client.getProfile('ickerio')
     .then(profile => {
         const myRank = profile.getStats({
             region: 'oc',
-            season: '2017-pre4',
+            season: '2017-pre6',
             match: 'solo'
         }).getItem('Rating').rank;
 
         console.log(`My ranking in solo, oceania this season is ${myRank}`);
     })
     .catch(console.error);
+
+client.getAccount('76561198114629752')
+    .then(a => a.matchHistory())
+    .then(matches => {
+        console.log(`I dealt ${m[0].damage} in my recent match`)
+    });
 ```
 
 # Web

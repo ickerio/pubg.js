@@ -1,13 +1,20 @@
 class Account {
-    constructor(content) {
-        this.accountId = content.AccountId;
-        this.nickname = content.Nickname;
-        this.avatarUrl = content.AvatarUrl;
-        this.fullAvatarUrl = content.AvatarUrl.replace('.jpg', '_full.jpg');
-        this.steamName = content.SteamName;
-        this.state = content.State;
-        this.inviteAllow = content.InviteAllow;
+    constructor(content, client) {
+        this.accountId = content.accountId;
+        this.nickname = content.nickname;
+        this.steamId = content.steamId;
+
+        this.client = client;
     }
+    
+    profile(options) {
+        return this.client.getProfile(this.nickname, options);
+    }
+
+    matchHistory() {
+        return this.client.getMatchHistory(this.accountId);
+    }
+
 }
 
 module.exports = Account;

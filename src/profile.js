@@ -1,27 +1,26 @@
 const Stats = require('./stats.js');
-const Match = require('./match.js');
 
 class Profile {
-    constructor(content) {
-        this.platformId = content.platformId;
-        this.accountId = content.AccountId;
-        this.avatar = content.Avatar;
-        this.fullAvatar = content.Avatar.replace('.jpg', '_full.jpg');
-        this.selectedRegion = content.selectedRegion;
-        this.defaultSeason = content.defaultSeason;
-        this.seasonDisplay = content.seasonDisplay;
-        this.lastUpdated = new Date(content.LastUpdated);
-        this.playerName = content.PlayerName;
-        this.pubgTrackerId = content.PubgTrackerId;
-        this.stats = content.Stats.map(stats => new Stats(stats));
-        if (content.MatchHistory) this.matchHistory = content.MatchHistory.map(match => new Match(match));
+    constructor(content, client) {
+        this.pubgTrackerId = content.pubgTrackerId;
+        this.accountId = content.accountId;
+        this.platform = content.platform;
+        this.nickname = content.nickname;
+        this.avatar = content.avatar;
+        this.avatarFull = content.avatar.replace('.jpg', '_full.jpg');
+        this.steamId = content.steamId;
+        this.lastUpdated = content.lastUpdated;
+        this.timePlayed = content.timePlayed;
+        this.stats = content.stats.map(stats => new Stats(stats));
+
+        this.client = client;
     }
 
     getStats(options = {}) {
         options = Object.assign({
             region: this.selectedRegion,
             season: this.defaultSeason,
-            match: 'solo'
+            mode: 'solo'
         }, options);
         
         return this.stats.find(s => 
@@ -29,6 +28,14 @@ class Profile {
             s.season === options.season &&
             s.match === options.match
         ) || {};
+    }
+
+    matchHistory() {
+        return this.client.getMatchHistory(this.accountId);
+    }
+
+    account() {
+        return this.client.getAccount(this.steamId);
     }
 }
 

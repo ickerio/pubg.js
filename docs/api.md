@@ -5,16 +5,21 @@
 - [Client](#Client)
     * [getProfile()](#pubgclientgetprofileusername)
     * [getAccount()](#pubgclientgetaccountsteamid)
+    * [getMatchHistory()](#pubgclientgetmatchhistoryaccountId)
 - [Profile](#profile)
     * [getStats()](#profilegetstatsoptions)
+    * [matchHistory()](#profilematchhistory)
+    * [account()](#profileaccount)
 - [Account](#account)
+    * [profile()](#accountprofileoptions)
+    * [matchHistory()](#accountmatchhistory
 - [Stats](#stats)
     * [getItem()](#statsgetitemname)
 - [Match](#match)
 - [API Definitions](#api-definitions)
     * [Regions](#regions)
     * [Seasons](#seasons)
-    * [Matches](#matches)
+    * [Modes](#modes)
 
 
 ## Client
@@ -30,37 +35,52 @@
 - `steamId` <[String]> 64 bit Steam Id
 - Returns: <[Account]>
 
+#### Client#getMatchHistory(accountId)
+- `accountId` <[String]> PUBG account id (`account.accountId`)
+- Returns: Array of <[Match]>
+
 ## Profile
-| Data           | Description                       |
-|----------------|-----------------------------------|
-| platformId     | `Unknown`                         |
-| accountId      | `Unknown`                         |
-| avatar         | URL of steam avatar used in game  |
-| fullAvatar     | Full resolution of `avatar`       |
-| selectedRegion | Server region                     |
-| defaultSeason  | Current season in PUBG            |
-| seasonDisplay  | Display text for season           |
-| lastUpdated    | Time of last profile update       |
-| playerName     | Unique PUBG name                  |
-| pubgTrackerId  | Unique ID of player issued by API |
+| Data          | Description                                        |
+|---------------|----------------------------------------------------|
+| pubgTrackerId | UUID assigned by pubgtracker API                   |
+| accountId     | PUBG account ID, used to get matches               |
+| platform      | Platform used to play game (currently only pc / 4) |
+| nickname      | PUBG in game name                                  |
+| avatar        | URL of steam avatar used in game                   |
+| avatarFull    | Full resolution of steam avatar used in game       |
+| steamId       | 64 bit Steam ID                                    |
+| lastUpdated   | Time stats were last updated                       |
+| timePlayed    | In game minutes played                             |
 
 #### Profile#getStats(options)
 - `options` <[Object]>
     - `region` <[String]> region: [see here](#regions) Defaults to `selectedRegion`
     - `season` <[String]> season: [see here](#seasons) Defaults to `defaultSeason`
-    - `match` <[String]> match: [see here](#matches) Defaults to 'solo'
+    - `mode` <[String]> mode: [see here](#modes) Defaults to 'solo'
 - Returns: <[Stats]>
 
+#### Profile#matchHistory()
+- Returns: Array of <[Match]>
+
+#### Profile#account()
+- Returns: <[Account]>
+
 ## Account
-| Data          | Description                         |
-|---------------|-------------------------------------|
-| accountId     | API key parsed to client            |
-| nickname      | PUBG name tied to the steam account |
-| avatarUrl     | URL of steam avatar used in game    |
-| fullAvatarUrl | Full resolution of `avatarUrl`      |
-| steamName     | Display name for Steam              |
-| state         | State of user in PUBG               |
-| inviteAllow   | Current invite settings in PUBG     |
+| Data      | Description                          |
+|-----------|--------------------------------------|
+| accountId | PUBG account ID, used to get matches |
+| nickname  | PUBG in game name                    |
+| steamId   | 64 bit Steam ID                      |
+
+#### Account#profile(options)
+- `options` <[Object]>
+    - `region` <[String]> region: [see here](#regions)
+    - `season` <[String]> season: [see here](#seasons)
+    - `mode` <[String]> mode: [see here](#modes)
+- Returns: <[Profile]>
+
+#### Account#matchHistory()
+- Returns: Array of <[Match]>
 
 ## Stats
 | Data   | Description                 |
@@ -133,7 +153,39 @@
     - `displayValue` <[String]>
 
 ## Match
-This has been deprecated due to the API, will be removed in later versions.
+| Data                 | Description |
+|----------------------|-------------|
+| id                   | TODO        |
+| updated              | TODO        |
+| updatedJS            | TODO        |
+| season               | TODO        |
+| seasonDisplay        | TODO        |
+| match                | TODO        |
+| matchDisplay         | TODO        |
+| region               | TODO        |
+| regionDisplay        | TODO        |
+| rounds               | TODO        |
+| wins                 | TODO        |
+| kills                | TODO        |
+| assists              | TODO        |
+| top10                | TODO        |
+| rating               | TODO        |
+| ratingChange         | TODO        |
+| ratingRank           | TODO        |
+| ratingRankChange     | TODO        |
+| headshots            | TODO        |
+| kd                   | TODO        |
+| damage               | TODO        |
+| timeSurvived         | TODO        |
+| winRating            | TODO        |
+| winRank              | TODO        |
+| winRatingChange      | TODO        |
+| winRatingRankChange  | TODO        |
+| killRating           | TODO        |
+| killRank             | TODO        |
+| killRatingChange     | TODO        |
+| killRatingRankChange | TODO        |
+| moveDistance         | TODO        |
 
 ## API Definitions
 Definitions and examples of some of the API
@@ -146,15 +198,17 @@ Definitions and examples of some of the API
 - `oc` Oceania
 - `sa` South America
 - `sea` South East Asia
+- `krjp` Korea / Japan
 
 #### Seasons
 - `2017-pre1` 2017 Early Access Season 1
 - `2017-pre2` 2017 Early Access Season 2
 - `2017-pre3` 2017 Early Access Season 3
 - `2017-pre4` 2017 Early Access Season 4
-- `2017-pre5` 2017 Early Access Season 5 (current)
+- `2017-pre5` 2017 Early Access Season 5
+- `2017-pre6` 2017 Early Access Season 6
 
-#### Matches
+#### Modes
 - `solo` Solo
 - `duo` Duo
 - `squad` Squad
@@ -173,4 +227,4 @@ Definitions and examples of some of the API
 [Profile]: #profile "Profile"
 [Account]: #account "Account"
 [Stats]: #stats "Stats"
-[Match]: mMatch "Match"
+[Match]: #match "Match"

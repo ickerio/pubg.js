@@ -1,9 +1,9 @@
 class Stats {
     constructor(content) {
-        this.region = content.Region;
-        this.season = content.Season;
-        this.match = content.Match;
-        this.stats = this._structureStats(content.Stats);
+        this.region = content.region;
+        this.season = content.season;
+        this.mode = content.mode;
+        this.stats = this._structureStats(content.stats);
     }
 
     getItem(name) {
