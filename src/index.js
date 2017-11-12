@@ -1,6 +1,6 @@
 module.exports = {
     // Base Class
-    Client: require('./Client.js'),
+    Client: require('./Client'),
 
     Profile: require('./Profile'),
     Account: require('./Account'),
