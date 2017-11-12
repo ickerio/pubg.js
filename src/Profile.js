@@ -1,4 +1,4 @@
-const Stats = require('./stats.js');
+const Stats = require('./Stats');
 
 class Profile {
     constructor(content, client) {
