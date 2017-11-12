@@ -35,7 +35,7 @@ client.getProfile('ickerio')
 client.getAccount('76561198114629752')
     .then(a => a.matchHistory())
     .then(matches => {
-        console.log(`I dealt ${m[0].damage} in my recent match`)
+        console.log(`I dealt ${m[0].damage} damage in my recent match`)
     });
 ```
 

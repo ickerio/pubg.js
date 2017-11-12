@@ -12,7 +12,7 @@
     * [account()](#profileaccount)
 - [Account](#account)
     * [profile()](#accountprofileoptions)
-    * [matchHistory()](#accountmatchhistory
+    * [matchHistory()](#accountmatchhistory)
 - [Stats](#stats)
     * [getItem()](#statsgetitemname)
 - [Match](#match)
