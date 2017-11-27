@@ -26,7 +26,7 @@ class Profile {
         return this.stats.find(s => 
             s.region === options.region && 
             s.season === options.season &&
-            s.match === options.match
+            s.mode === options.mode
         ) || {};
     }
 
