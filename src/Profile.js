@@ -17,17 +17,11 @@ class Profile {
     }
 
     getStats(options = {}) {
-        options = Object.assign({
-            region: this.selectedRegion,
-            season: this.defaultSeason,
-            mode: 'solo'
-        }, options);
-        
         return this.stats.find(s => 
             s.region === options.region && 
             s.season === options.season &&
             s.mode === options.mode
-        ) || {};
+        );
     }
 
     matchHistory() {

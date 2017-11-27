@@ -25,10 +25,10 @@ client.getProfile('ickerio')
         const myRank = profile.getStats({
             region: 'oc',
             season: '2017-pre5',
-            match: 'solo'
+            match: 'duo'
         }).getItem('Rating').rank;
 
-        console.log(`My ranking in solo, oceania this season is ${myRank}`);
+        console.log(`My ranking in duo, oceania this season is ${myRank}`);
     })
     .catch(console.error);
 

@@ -206,7 +206,6 @@ Definitions and examples of some of the API
 - `2017-pre3` 2017 Early Access Season 3
 - `2017-pre4` 2017 Early Access Season 4
 - `2017-pre5` 2017 Early Access Season 5
-- `2017-pre6` 2017 Early Access Season 6
 
 #### Modes
 - `solo` Solo
