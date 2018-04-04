@@ -1,6 +1,8 @@
 # pubg.js Documentation
 **Version 2.0**
 
+> NOT UPDATED FOR v3 YET
+
 **Table Of Contents**
 - [Client](#Client)
     * [getProfile()](#pubgclientgetprofileusername)

@@ -26,11 +26,11 @@
   "runkitExampleFilename": "docs/example.js",
   "homepage": "https://github.com/ickerio/pubg.js#readme",
   "dependencies": {
-    "snekfetch": "^3.4.1"
+    "snekfetch": "^3.6.4"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "uglifyjs-webpack-plugin": "^1.0.0-beta.3",
-    "webpack": "^3.6.0"
+    "eslint": "^4.19.1",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^3.11.0"
   }
 }

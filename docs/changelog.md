@@ -1,5 +1,15 @@
 # pubg.js Changelog
 
+### v3.0.0
+ - Complete rehaul! Now uses the [official pubg dev api](https://developer.playbattlegrounds.com/). Still a lot of work to do, and quite a few things to update. 
+ - TODO: 
+    - Add and integrate roster, participant, asset classes
+    - Add a status class
+    - REDO: example.js, test/index.js
+    - Update api docs *urgent*
+    - Cover telemetery data in api
+    - Internal `verifyShard`
+
 ### v2.0.0
  - **HOORAYYY!!!!** Whole new [API v2](https://pubgtracker.com/site-api), and API signups have been reopened
  - Updated readme for new examples

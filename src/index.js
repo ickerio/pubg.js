@@ -2,10 +2,8 @@ module.exports = {
     // Base Class
     Client: require('./Client'),
 
-    Profile: require('./Profile'),
-    Account: require('./Account'),
-    Stats: require('./Stats'),
     Match: require('./Match'),
+    Player: require('./Player'),
 
-    version: require('../package.json').version
+    version: require('../package.json').version,
 };

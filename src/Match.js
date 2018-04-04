@@ -1,36 +1,39 @@
 class Match {
-    constructor(content) {
+    constructor(content, client) {
+        Object.defineProperty(this, 'client', { value: client });
+
+        if (typeof content === 'string') {
+            this.id = content;
+            this.full = false;
+            return;
+        }
+
         this.id = content.id;
-        this.updated = content.updated;
-        this.updatedJS = content.updatedJS;
-        this.season = content.season;
-        this.seasonDisplay = content.seasonDisplay;
-        this.match = content.match;
-        this.matchDisplay = content.matchDisplay;
-        this.region = content.region;
-        this.regionDisplay = content.regionDisplay;
-        this.rounds = content.rounds;
-        this.wins = content.wins;
-        this.kills = content.kills;
-        this.assists = content.assists;
-        this.top10 = content.top10;
-        this.rating = content.rating;
-        this.ratingChange = content.ratingChange;
-        this.ratingRank = content.ratingRank;
-        this.ratingRankChange = content.ratingRankChange;
-        this.headshots = content.headshots;
-        this.kd = content.kd;
-        this.damage = content.damage;
-        this.timeSurvived = content.timeSurvived;
-        this.winRating = content.winRating;
-        this.winRank = content.winRank;
-        this.winRatingChange = content.winRatingChange;
-        this.winRatingRankChange = content.winRatingRankChange;
-        this.killRating = content.killRating;
-        this.killRank = content.killRank;
-        this.killRatingChange = content.killRatingChange;
-        this.killRatingRankChange = content.killRatingRankChange;
-        this.moveDistance = content.moveDistance;
+        this.attributes = {
+            createdAt: new Date(content.attributes.createdAt),
+            duration: content.attributes.duration,
+            gameMode: content.attributes.gameMode,
+            patchVersion: content.attributes.patchVersion,
+            shardId: content.attributes.shardId,
+            stats: content.attributes.stats,
+            tags: content.attributes.tags,
+            titleId: content.attributes.titleId,
+        };
+        this.relationships = {
+            assets: content.relationships.assets.data,
+            rosters: content.relationships.rosters.data,
+            rounds: content.relationships.rounds.data,
+            spectators: content.relationships.spectators.data,
+        };
+        this.links = {
+            schema: content.links.schema,
+            self: content.links.self,
+        };
+    }
+
+    get() {
+        return this.client.getMatch(this.id)
+            .catch(e => Promise.reject(e));
     }
 }
 
