@@ -11,12 +11,12 @@ module.exports = [{
         libraryTarget: 'window',
     },
     stats: {
-        colors: true
+        colors: true,
     },
     devtool: 'source-map',
     plugins: [
-        new webpack.optimize.ModuleConcatenationPlugin()
-    ]
+        new webpack.optimize.ModuleConcatenationPlugin(),
+    ],
 },
 {
     entry: './src/index.js',
@@ -27,7 +27,7 @@ module.exports = [{
         libraryTarget: 'window',
     },
     stats: {
-        colors: true
+        colors: true,
     },
     devtool: 'source-map',
     plugins: [
@@ -35,13 +35,13 @@ module.exports = [{
         new UglifyJSPlugin({
             uglifyOptions: {
                 mangle: {
-                    keep_classnames: true
+                    keep_classnames: true,
                 },
                 output: {
-                    comments: false
+                    comments: false,
                 },
             },
-        })
-    ]
-}
+        }),
+    ],
+},
 ];

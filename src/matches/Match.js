@@ -1,5 +1,8 @@
+const Asset = require('./Asset');
+const Roster = require('./Roster');
+
 class Match {
-    constructor(content, client) {
+    constructor(content, client, included) {
         Object.defineProperty(this, 'client', { value: client });
 
         if (typeof content === 'string') {
@@ -9,6 +12,7 @@ class Match {
         }
 
         this.id = content.id;
+        this.full = true;
         this.attributes = {
             createdAt: new Date(content.attributes.createdAt),
             duration: content.attributes.duration,
@@ -20,18 +24,16 @@ class Match {
             titleId: content.attributes.titleId,
         };
         this.relationships = {
-            assets: content.relationships.assets.data,
-            rosters: content.relationships.rosters.data,
+            assets: content.relationships.assets.data.map(p => new Asset(included.find(i => i.type === 'asset' && i.id === p.id), included)),
+            // eslint-disable-next-line
+            rosters: content.relationships.rosters.data.map(p => new Roster(included.find(i => i.type === 'roster' && i.id === p.id), included)),
+            // Currently unused by API
             rounds: content.relationships.rounds.data,
             spectators: content.relationships.spectators.data,
         };
-        this.links = {
-            schema: content.links.schema,
-            self: content.links.self,
-        };
     }
 
-    get() {
+    fetch() {
         return this.client.getMatch(this.id)
             .catch(e => Promise.reject(e));
     }

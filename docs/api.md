@@ -1,7 +1,7 @@
 # pubg.js Documentation
 **Version 2.0**
 
-> NOT UPDATED FOR v3 YET
+> NOT UPDATED FOR v3 YET. JSDOC GENERATED API COMING SOON
 
 **Table Of Contents**
 - [Client](#Client)

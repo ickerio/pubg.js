@@ -1,4 +1,4 @@
-const Match = require('./Match');
+const Match = require('./matches/Match');
 
 class Player {
     constructor(content, client) {
@@ -15,10 +15,6 @@ class Player {
         this.relationships = {
             assets: content.relationships.assets.data,
             matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
-        };
-        this.links = {
-            schema: content.links.schema,
-            self: content.links.self,
         };
     }
 }

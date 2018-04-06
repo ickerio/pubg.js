@@ -1,5 +1,15 @@
 # pubg.js Changelog
 
+### v3.1.0
+ - Intergrated roster, asset, and participant classes
+ - Internal `verifyShard` completed
+ - <Match>.get() changed to <Match>.fetch()
+ - Added status class
+ - Finished example and tests
+ - Still TODO:
+    - Telemetery data
+    - Implement JSdoc
+
 ### v3.0.0
  - Complete rehaul! Now uses the [official pubg dev api](https://developer.playbattlegrounds.com/). Still a lot of work to do, and quite a few things to update. 
  - TODO: 

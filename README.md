@@ -22,10 +22,15 @@ const client = new pubg.Client('yourKey');
 const player = await client.getPlayer({name: 'yeye155'});
 
 // Get the player's most recent match
-const match = await player[0].relationships.matches[0].get()
+const match = await player[0].relationships.matches[0].fetch()
 
 console.log(`${player.attributes.name} played in a ${match.attributes.duration} second match in ${match.attributes.gameMode} gamemode`)
 // => yeye155 played in a 1884 second match in solo gamemode
+
+// See the status of the api
+client.getStatus()
+    .then(m => console.log('api is online', m))
+    .catch(e => console.log('api is offline', e))
 ```
 
 # Web
