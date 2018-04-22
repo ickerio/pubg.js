@@ -1,5 +1,14 @@
 # pubg.js Changelog
 
+### v3.2.0
+ - Added <Client>.getSamples(Date)
+ - Added <Client>.getTelemetry(url)
+ - Added Match.getTelemetry()
+ - Added mapName in Match
+ - Made progress in JSdoc. Still not complete
+
+
+
 ### v3.1.0
  - Intergrated roster, asset, and participant classes
  - Internal `verifyShard` completed
