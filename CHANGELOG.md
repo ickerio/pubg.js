@@ -1,13 +1,16 @@
 # pubg.js Changelog
 
+### v3.2.1
+ - No changes to code
+ - Added almost complete JSdoc
+ - Removed example.js (for now) and moved docs/changelog.md to CHANGELOG.md
+
 ### v3.2.0
  - Added <Client>.getSamples(Date)
  - Added <Client>.getTelemetry(url)
  - Added Match.getTelemetry()
  - Added mapName in Match
  - Made progress in JSdoc. Still not complete
-
-
 
 ### v3.1.0
  - Intergrated roster, asset, and participant classes

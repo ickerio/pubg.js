@@ -2,7 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/14541442/32552867-3d44fd8e-c4d0-11e7-85d5-5199697582bd.png" width="250" align="right">
 
-###### [API](docs/api.md) | [Changelog](docs/changelog.md) | [Issues](#issues)
+###### [API](http://ickerio.github.io/pubg.js) | [Changelog](CHANGELOG.md) | [Issues](#issues)
 
 A powerful and light PlayerUnknown's Battlegrounds stats API wrapper, for Node.js and for the web.
  

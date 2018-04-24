@@ -11,3 +11,4 @@ logs/
 .travis.yml
 webpack.config.js
 test/
+docs/

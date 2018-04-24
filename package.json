@@ -7,7 +7,8 @@
     "test": "npm run lint && npm run tests",
     "lint": "eslint src *.js",
     "tests": "node test/index.js",
-    "webpack": "./node_modules/.bin/webpack --config webpack.config.js"
+    "webpack": "./node_modules/.bin/webpack --config webpack.config.js",
+    "docs": "./node_modules/.bin/jsdoc src README.md -d ./docs"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "eslint": "^4.19.1",
+    "jsdoc": "^3.5.5",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^3.11.0"
   }
