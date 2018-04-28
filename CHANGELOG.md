@@ -1,5 +1,8 @@
 # pubg.js Changelog
 
+### v3.2.2
+ - Readme changes, currently working on caching - **stay tuned**
+
 ### v3.2.1
  - No changes to code
  - Added almost complete JSdoc

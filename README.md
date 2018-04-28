@@ -1,11 +1,28 @@
-# pubg.js [![Travis-ci](https://travis-ci.org/ickerio/pubg.js.svg?branch=master)](https://travis-ci.org/ickerio/pubg.js) [![npm downloads](https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600)](https://www.npmjs.com/package/pubg.js) [![Dependencies](https://img.shields.io/david/ickerio/pubg.js.svg?maxAge=3600)](https://david-dm.org/ickerio/pubg.js) [![RunKit](https://badge.runkitcdn.com/pubg.js.svg)](https://npm.runkit.com/pubg.js)
+<p align="center">
+    <a href="#"><img src="https://user-images.githubusercontent.com/14541442/32552867-3d44fd8e-c4d0-11e7-85d5-5199697582bd.png"></a>
+</p>
 
-<img src="https://user-images.githubusercontent.com/14541442/32552867-3d44fd8e-c4d0-11e7-85d5-5199697582bd.png" width="250" align="right">
+<p align="center">
+A powerful and light PlayerUnknown's Battlegrounds stats API wrapper,<br/>for Node.js and for the web.
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/ickerio/pubg.js">
+    <img src="https://travis-ci.org/ianstormtaylor/pubg.js.svg?branch=master">
+  </a>
+  <a href="https://www.npmjs.com/package/pubg.js">
+    <img src="https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600">
+  </a>
+  <a href="./package.json">
+    <img src="https://img.shields.io/david/ickerio/pubg.js.svg?maxAge=3600">
+  </a>
+</p>
 
 ###### [Wrapper Documentation](https://ickerio.github.io/pubg.js/) | [API Documentation](https://documentation.playbattlegrounds.com/en/introduction.html) | [Changelog](CHANGELOG.md) | [Issues](#issues)
 
-A powerful and light PlayerUnknown's Battlegrounds stats API wrapper, for Node.js and for the web.
- 
+
+pubg.js makes it easy to interact with [the pubg dev api](https://developer.playbattlegrounds.com/). Written with an inteligent and performant api, making it easy for anyone to access a massive database of pubg data, including players stats, matches, teams, events of matches and much more. Built with customizable caching, for maximum performence, and quicker data retrieval. 
+
 # Setup and Installation
 1. Signup at [the pubg dev api site](https://developer.playbattlegrounds.com/)
 2. Register an [app](https://developer.playbattlegrounds.com/apps/new?locale=en), giving you a key
@@ -15,22 +32,31 @@ A powerful and light PlayerUnknown's Battlegrounds stats API wrapper, for Node.j
 
 # Examples
 ```js
+// Require model and initiate client with api key
 const pubg = require('pubg.js');
 const client = new pubg.Client('yourKey');
 
 // Get a single player using their name
-const player = await client.getPlayer({name: 'yeye155'});
+const player = client.getPlayer({name: 'yeye155'})
+    .then(player => /* Use an extensive class of data */)
+    .catch(error => /* Catch any errors */)
 
-// Get the player's most recent match
-const match = await player[0].relationships.matches[0].fetch()
+// Retrieve thousands of recent matches, and get stats for any of them
+const player = client.getSamples()
+    .then(matches => /* Have access to the PUBG's extensive list of matches */)
+    .catch(error => /* Catch any errors */)
 
-console.log(`${player.attributes.name} played in a ${match.attributes.duration} second match in ${match.attributes.gameMode} gamemode`)
-// => yeye155 played in a 1884 second match in solo gamemode
+// Fetch a match with a heap of data on every participant of the match and their stats
+const player = client.getSamples()
+    .then(match => {
+        // Manipulate the data in any way you like, or even get match telemetry data 
+        match.fetchTelemetry()
+        // View a heap of data on the teams - best k/d, winning team etc
+        match.relationships.rosters
 
-// See the status of the api
-client.getStatus()
-    .then(m => console.log('api is online', m))
-    .catch(e => console.log('api is offline', e))
+    })
+    .catch(error => /* Catch any errors */)
+
 ```
 
 # Web
