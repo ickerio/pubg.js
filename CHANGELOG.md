@@ -1,5 +1,11 @@
 # pubg.js Changelog
 
+### v3.5.0
+ - Added `GameModeStats` and `PlayerSeason` classes, which are returned from `getPlayerStats`
+ - all `getPlayerStats` functions have been renamed to `getPlayerSeason`
+ - added Player.fetch(shard) as PlayerSeasons give an unfilled Player
+
+
 ### v3.4.0
  - Updated snekfetch dependancy and all devDependencies
  - Added `NOTE: Resolvable an id, or the class itself, eg can be a player Id or a player class`

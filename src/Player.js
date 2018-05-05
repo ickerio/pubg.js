@@ -11,11 +11,23 @@ class Player {
          */
         Object.defineProperty(this, 'client', { value: client });
 
+        if (typeof content === 'string') {
+            this.id = content;
+            this.full = false;
+            return;
+        }
+
         /**
          * API id of the player
          * @type {string}
          */
         this.id = content.id;
+
+        /**
+         * If the player contains full data or needs `.fetch()`
+         * @type {boolean}
+         */
+        this.full = true;
 
         /**
          * Attributes of the Player
@@ -46,8 +58,18 @@ class Player {
         };
     }
 
-    getPlayerStats(season) {
+    /**
+     * Get a player season object
+     * @param {(string|Season)} season The season of the player season
+     * @returns {Promise<Object>}
+     * @memberof Player
+     */
+    getPlayerSeason(season) {
         return this.client.getPlayerStats(this, season);
+    }
+
+    fetch(shard = this.client.defaultShard) {
+        return this.client.getPlayer({ id: this.id }, shard);
     }
 }
 

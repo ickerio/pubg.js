@@ -10,11 +10,23 @@ class Season {
          */
         Object.defineProperty(this, 'client', { value: client });
 
+        if (typeof content === 'string') {
+            this.id = content;
+            this.full = false;
+            return;
+        }
+
         /**
          * Season  ID
          * @type {string}
          */
         this.id = content.id;
+
+        /**
+         * If the season contains full data, like it's attributes
+         * @type {boolean}
+         */
+        this.full = true;
 
         /**
          * Attributes of the Player
@@ -28,7 +40,14 @@ class Season {
         };
     }
 
-    getPlayerStats(player, shard) {
+    /**
+     * Get a player season object
+     * @param {(string|Player)} player The player of the player season
+     * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
+     * @returns {Promise<Object>}
+     * @memberof Client
+     */
+    getPlayerSeason(player, shard) {
         return this.client.getPlayerStats(player, this, shard);
     }
 }

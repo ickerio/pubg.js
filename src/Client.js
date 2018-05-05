@@ -6,6 +6,7 @@ const Player = require('./Player');
 const Match = require('./matches/Match');
 const Status = require('./Status');
 const Season = require('./Season');
+const PlayerSeason = require('./playerseason/PlayerSeason');
 /**
  * The main hub for interacting with the pubg api, and starting point for any api instance
  * @class Client
@@ -68,8 +69,17 @@ class Client {
             .then(seasons => seasons.data.map(s => new Season(s, this)));
     }
 
-    getPlayerStats(player, season, shard) {
-        return this._baseRequest({ endpoint: `players/${player instanceof Player ? player.id : player}/seasons/${season instanceof Season ? season.id : season}`, shard: player instanceof Player ? player.attributes.shardId : shard || this.defaultShard });
+    /**
+     * Get a player season object
+     * @param {(string|Player)} player The player of the player season
+     * @param {(string|Season)} season The season of the player season
+     * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
+     * @returns {Promise<Object>}
+     * @memberof Client
+     */
+    getPlayerSeason(player, season, shard) {
+        return this._baseRequest({ endpoint: `players/${player instanceof Player ? player.id : player}/seasons/${season instanceof Season ? season.id : season}`, shard: player instanceof Player ? player.attributes.shardId : shard || this.defaultShard })
+            .then(ps => new PlayerSeason(ps.data));
     }
 
     /**
