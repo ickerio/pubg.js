@@ -45,6 +45,10 @@ class Player {
             matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
         };
     }
+
+    getPlayerStats(season) {
+        return this.client.getPlayerStats(this, season);
+    }
 }
 
 module.exports = Player;

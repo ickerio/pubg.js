@@ -146,11 +146,6 @@
         "key-spacing":"error",
         "keyword-spacing":"error",
         "max-depth":"error",
-        "max-len":[
-            "error",
-            150,
-            2
-        ],
         "max-nested-callbacks":[
             "error",
             {

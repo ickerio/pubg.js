@@ -1,5 +1,18 @@
 # pubg.js Changelog
 
+### v3.3.0
+ - Updated snekfetch dependancy and all devDependencies
+ - Added `NOTE: Resolvable an id, or the class itself, eg can be a player Id or a player class`
+    * <Client>.getSeasons(shard)
+    * <Client>.getPlayerStats(playerResolvable, seasonResolvable, shard)
+    * <Player>.getPlayerStats(seasonResolvable)
+    * <Season>.getPlayerStats(playerResolvable, shard)
+ - Within <Client>.getPlayer(), if only one player is returned eg `({ id: '123' })` or `({ name: 'bob' })`, only the player is returned an NOT an array (QOL improvement)
+ - Tidied up a few internals for incorrect shards preventation and nicer code
+ - **VERY SOON:** Will finish off the playerStats to be a full class, as currently it's just a JSON
+ - TODO: JSDOC Participant, Asset and Roster :))
+
+
 ### v3.2.2
  - Readme changes, currently working on caching - **stay tuned**
 
