@@ -1,6 +1,6 @@
 # pubg.js Changelog
 
-### v3.3.0
+### v3.4.0
  - Updated snekfetch dependancy and all devDependencies
  - Added `NOTE: Resolvable an id, or the class itself, eg can be a player Id or a player class`
     * <Client>.getSeasons(shard)
