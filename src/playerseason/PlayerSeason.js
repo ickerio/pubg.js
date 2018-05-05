@@ -10,21 +10,33 @@ const Season = require('../Season');
 class PlayerSeason {
     constructor(content, client) {
         /**
-         * Attributes of the Player
+         * Attributes of the PlayerSeason
          * @type {Object}
-         * @property {Object} attributes.gameModeStats An object full of all game mode types being `duo`, `duo-fpp`, `solo`, `solo-fpp`, `squad`, `squad-fpp`
+         * @property {Object} attributes.gameModeStats An object full of all game mode types being `duo`, `duoFPP`, `solo`, `soloFPP`, `squad`, `squadFPP`
          */
         this.attributes = {
             gameModeStats: {
                 duo: new GameModeStats(content.attributes.gameModeStats.duo),
-                'duo-fpp': new GameModeStats(content.attributes.gameModeStats['duo-fpp']),
+                duoFPP: new GameModeStats(content.attributes.gameModeStats['duo-fpp']),
                 solo: new GameModeStats(content.attributes.gameModeStats.solo),
-                'solo-fpp': new GameModeStats(content.attributes.gameModeStats['solo-fpp']),
+                soloFPP: new GameModeStats(content.attributes.gameModeStats['solo-fpp']),
                 squad: new GameModeStats(content.attributes.gameModeStats.squad),
-                'squad-fpp': new GameModeStats(content.attributes.gameModeStats['squad-fpp']),
+                squadFPP: new GameModeStats(content.attributes.gameModeStats['squad-fpp']),
             },
         };
 
+        /**
+         * Relationships of the PlayerSeason
+         * @type {Object}
+         * @property {Player} relationships.player Player of the PlayerSeason
+         * @property {Array<Match>} relationships.matchesSolo All solo matches played during the season by the player
+         * @property {Array<Match>} relationships.matchesSoloFPP All solo-fpp matches played during the season by the player
+         * @property {Array<Match>} relationships.matchesDuo All duo matches played during the season by the player
+         * @property {Array<Match>} relationships.matchesDuoFPP All duo-fpp matches played during the season by the player
+         * @property {Array<Match>} relationships.matchesSquad All squad matches played during the season by the player
+         * @property {Array<Match>} relationships.matchesSquadFPP All squad-fpp matches played during the season by the player
+         * @property {Season} relationships.season All solo matches played during the season by the player
+         */
         this.relationships = {
             player: new Player(content.relationships.player.data.id, client),
             matchesSolo: content.relationships.matchesSolo.data.map(m => new Match(m.id, this.client)),

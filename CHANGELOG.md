@@ -1,5 +1,11 @@
 # pubg.js Changelog
 
+### v3.5.1
+ - *Mainly* DOCUMENTATION UPDATE
+ - New docs, better theme
+ - Added some stuff that was somehow missing from the docs, to the docs
+ - `PlayerSeason`.attributes.gameModeStats updated to without the `-`: `duo-fpp` => `duoFPP`
+
 ### v3.5.0
  - Added `GameModeStats` and `PlayerSeason` classes, which are returned from `getPlayerStats`
  - all `getPlayerStats` functions have been renamed to `getPlayerSeason`

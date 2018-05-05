@@ -1,3 +1,7 @@
+/**
+ * An API returned game mode stats
+ * @class GameModeStats
+ */
 class GameModeStats {
     constructor(content) {
         /**

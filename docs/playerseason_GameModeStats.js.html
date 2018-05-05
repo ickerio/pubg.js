@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Player.js - Documentation</title>
+    <title>playerseason/GameModeStats.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Player.js</h1>
+    <h1 class="page-title">playerseason/GameModeStats.js</h1>
     
 
     
@@ -39,88 +39,195 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Match = require('./matches/Match');
-/**
- * An API returned player object
- * @class Player
+            <pre class="prettyprint source linenums"><code>/**
+ * An API returned game mode stats
+ * @class GameModeStats
  */
-class Player {
-    constructor(content, client) {
+class GameModeStats {
+    constructor(content) {
         /**
-         * The client that created the Player
-         * @type {Client}
+         * Assists
+         * @type {Number}
          */
-        Object.defineProperty(this, 'client', { value: client });
-
-        if (typeof content === 'string') {
-            this.id = content;
-            this.full = false;
-            return;
-        }
+        this.assists = content.assists;
 
         /**
-         * API id of the player
+         * Boosts
+         * @type {Number}
+         */
+        this.boosts = content.boosts;
+
+        /**
+         * Downs but not out
+         * @type {Number}
+         */
+        this.dBNOs = content.dBNOs;
+
+        /**
+         * Daily kills
+         * @type {Number}
+         */
+        this.dailyKills = content.dailyKills;
+
+        /**
+         * Damage dealt
+         * @type {Number}
+         */
+        this.damageDealt = content.damageDealt;
+
+        /**
+         * Days
          * @type {string}
          */
-        this.id = content.id;
+        this.days = content.days;
 
         /**
-         * If the player contains full data or needs `.fetch()`
-         * @type {boolean}
+         * Headshot kills
+         * @type {string}
          */
-        this.full = true;
+        this.headshotKills = content.headshotKills;
 
         /**
-         * Attributes of the Player
-         * @type {Object}
-         * @property {string} attributes.name PUBG player name
-         * @property {string} attributes.shardId Platform-region shard
-         * @property {Date} attributes.createdAt Date at which the player account was created
-         * @property {string} attributes.patchVersion Version of the game
-         * @property {string} attributes.titleId Identifies the studio and game
+         * Total HP healed
+         * @type {string}
          */
-        this.attributes = {
-            name: content.attributes.name,
-            shardId: content.attributes.shardId,
-            createdAt: new Date(content.attributes.createdAt),
-            patchVersion: content.attributes.patchVersion,
-            titleId: content.attributes.titleId,
-        };
+        this.heals = content.heals;
 
         /**
-         * References to resource objects related to this player
-         * @type {Object}
-         * @property {Array&lt;Asset>} relationships.assets NOT IN API YET: Array of all assets of the player
-         * @property {Array&lt;Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
+         * Kills
+         * @type {string}
          */
-        this.relationships = {
-            assets: content.relationships.assets.data,
-            matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
-        };
-    }
+        this.kills = content.kills;
 
-    /**
-     * Get a player season object
-     * @param {(string|Season)} season The season of the player season
-     * @returns {Promise&lt;PlayerSeason>}
-     * @memberof Player
-     */
-    getPlayerSeason(season) {
-        return this.client.getPlayerStats(this, season);
-    }
+        /**
+         * Longest kill
+         * @type {string}
+         */
+        this.longestKill = content.longKill;
 
-    /**
-     * Fetches the full match
-     * @param {string} [shard=this.client.defaultShard] ShardId to fetch the player from
-     * @returns {Promise&lt;Match>}
-     * @memberof Player
-     */
-    fetch(shard = this.client.defaultShard) {
-        return this.client.getPlayer({ id: this.id }, shard);
+        /**
+         * Longest time survived
+         * @type {string}
+         */
+        this.longestTimeSurvived = content.longestTimeSurvived;
+
+        /**
+         * Losses
+         * @type {string}
+         */
+        this.losses = content.losses;
+
+        /**
+         * Maximum kill streaks
+         * @type {string}
+         */
+        this.maxKillStreaks = content.maxKillStreaks;
+
+        /**
+         * Most survival time
+         * @type {string}
+         */
+        this.mostSurvivalTime = content.mostSurvivalTime;
+
+        /**
+         * Revives
+         * @type {string}
+         */
+        this.revives = content.revives;
+
+        /**
+         * Ride distance
+         * @type {string}
+         */
+        this.rideDistance = content.rideDistance;
+
+        /**
+         * Road kills
+         * @type {string}
+         */
+        this.roadKills = content.roadKills;
+
+        /**
+         * Round most kills
+         * @type {string}
+         */
+        this.roundMostKills = content.roundMostKills;
+
+        /**
+         * Rounds played
+         * @type {string}
+         */
+        this.roundsPlayed = content.roundsPlayed;
+
+        /**
+         * Suicides
+         * @type {string}
+         */
+        this.suicides = content.suicides;
+
+        /**
+         * Team kills
+         * @type {string}
+         */
+        this.teamKills = content.teamKills;
+
+        /**
+         * Time survived
+         * @type {string}
+         */
+        this.timeSurvived = content.timeSurvived;
+
+        /**
+         * Top 10s
+         * @type {string}
+         */
+        this.top10s = content.top10s;
+
+        /**
+         * Vehicles Destroyed
+         * @type {string}
+         */
+        this.vehicleDestroys = content.vehicleDestroys;
+
+        /**
+         * Walk distance
+         * @type {string}
+         */
+        this.walkDistance = content.walkDistance;
+
+        /**
+         * Weapon Acquired
+         * @type {string}
+         */
+        this.weaponAcquired = content.weaponAcquired;
+
+        /**
+         * Weekly kills
+         * @type {string}
+         */
+        this.weeklyKills = content.weeklyKills;
+
+        /**
+         * Win points
+         * @type {string}
+         */
+        this.winPoints = content.winPoints;
+
+        /**
+         * Win ratio
+         * @type {string}
+         */
+        this.winRatio = content.winRatio;
+
+        /**
+         * Wins
+         * @type {string}
+         */
+        this.wins = content.wins;
     }
 }
 
-module.exports = Player;
+module.exports = GameModeStats;
 </code></pre>
         </article>
     </section>

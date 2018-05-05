@@ -61,13 +61,19 @@ class Player {
     /**
      * Get a player season object
      * @param {(string|Season)} season The season of the player season
-     * @returns {Promise<Object>}
+     * @returns {Promise<PlayerSeason>}
      * @memberof Player
      */
     getPlayerSeason(season) {
         return this.client.getPlayerStats(this, season);
     }
 
+    /**
+     * Fetches the full match
+     * @param {string} [shard=this.client.defaultShard] ShardId to fetch the player from
+     * @returns {Promise<Match>}
+     * @memberof Player
+     */
     fetch(shard = this.client.defaultShard) {
         return this.client.getPlayer({ id: this.id }, shard);
     }

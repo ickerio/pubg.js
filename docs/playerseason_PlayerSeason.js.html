@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Player.js - Documentation</title>
+    <title>playerseason/PlayerSeason.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Player.js</h1>
+    <h1 class="page-title">playerseason/PlayerSeason.js</h1>
     
 
     
@@ -39,88 +39,59 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Match = require('./matches/Match');
+            <pre class="prettyprint source linenums"><code>const GameModeStats = require('./GameModeStats');
+const Player = require('../Player');
+const Match = require('../matches/Match');
+const Season = require('../Season');
+
 /**
- * An API returned player object
- * @class Player
+ * An API returned player season object
+ * @class PlayerSeason
  */
-class Player {
+class PlayerSeason {
     constructor(content, client) {
         /**
-         * The client that created the Player
-         * @type {Client}
-         */
-        Object.defineProperty(this, 'client', { value: client });
-
-        if (typeof content === 'string') {
-            this.id = content;
-            this.full = false;
-            return;
-        }
-
-        /**
-         * API id of the player
-         * @type {string}
-         */
-        this.id = content.id;
-
-        /**
-         * If the player contains full data or needs `.fetch()`
-         * @type {boolean}
-         */
-        this.full = true;
-
-        /**
-         * Attributes of the Player
+         * Attributes of the PlayerSeason
          * @type {Object}
-         * @property {string} attributes.name PUBG player name
-         * @property {string} attributes.shardId Platform-region shard
-         * @property {Date} attributes.createdAt Date at which the player account was created
-         * @property {string} attributes.patchVersion Version of the game
-         * @property {string} attributes.titleId Identifies the studio and game
+         * @property {Object} attributes.gameModeStats An object full of all game mode types being `duo`, `duoFPP`, `solo`, `soloFPP`, `squad`, `squadFPP`
          */
         this.attributes = {
-            name: content.attributes.name,
-            shardId: content.attributes.shardId,
-            createdAt: new Date(content.attributes.createdAt),
-            patchVersion: content.attributes.patchVersion,
-            titleId: content.attributes.titleId,
+            gameModeStats: {
+                duo: new GameModeStats(content.attributes.gameModeStats.duo),
+                duoFPP: new GameModeStats(content.attributes.gameModeStats['duo-fpp']),
+                solo: new GameModeStats(content.attributes.gameModeStats.solo),
+                soloFPP: new GameModeStats(content.attributes.gameModeStats['solo-fpp']),
+                squad: new GameModeStats(content.attributes.gameModeStats.squad),
+                squadFPP: new GameModeStats(content.attributes.gameModeStats['squad-fpp']),
+            },
         };
 
         /**
-         * References to resource objects related to this player
+         * Relationships of the PlayerSeason
          * @type {Object}
-         * @property {Array&lt;Asset>} relationships.assets NOT IN API YET: Array of all assets of the player
-         * @property {Array&lt;Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
+         * @property {Player} relationships.player Player of the PlayerSeason
+         * @property {Array&lt;Match>} relationships.matchesSolo All solo matches played during the season by the player
+         * @property {Array&lt;Match>} relationships.matchesSoloFPP All solo-fpp matches played during the season by the player
+         * @property {Array&lt;Match>} relationships.matchesDuo All duo matches played during the season by the player
+         * @property {Array&lt;Match>} relationships.matchesDuoFPP All duo-fpp matches played during the season by the player
+         * @property {Array&lt;Match>} relationships.matchesSquad All squad matches played during the season by the player
+         * @property {Array&lt;Match>} relationships.matchesSquadFPP All squad-fpp matches played during the season by the player
+         * @property {Season} relationships.season All solo matches played during the season by the player
          */
         this.relationships = {
-            assets: content.relationships.assets.data,
-            matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
+            player: new Player(content.relationships.player.data.id, client),
+            matchesSolo: content.relationships.matchesSolo.data.map(m => new Match(m.id, this.client)),
+            matchesSoloFPP: content.relationships.matchesSoloFPP.data.map(m => new Match(m.id, this.client)),
+            matchesDuo: content.relationships.matchesDuo.data.map(m => new Match(m.id, this.client)),
+            matchesDuoFPP: content.relationships.matchesDuoFPP.data.map(m => new Match(m.id, this.client)),
+            matchesSquad: content.relationships.matchesSquad.data.map(m => new Match(m.id, this.client)),
+            matchesSquadFPP: content.relationships.matchesSquadFPP.data.map(m => new Match(m.id, this.client)),
+            season: new Season(content.relationships.season.data.id),
         };
-    }
-
-    /**
-     * Get a player season object
-     * @param {(string|Season)} season The season of the player season
-     * @returns {Promise&lt;PlayerSeason>}
-     * @memberof Player
-     */
-    getPlayerSeason(season) {
-        return this.client.getPlayerStats(this, season);
-    }
-
-    /**
-     * Fetches the full match
-     * @param {string} [shard=this.client.defaultShard] ShardId to fetch the player from
-     * @returns {Promise&lt;Match>}
-     * @memberof Player
-     */
-    fetch(shard = this.client.defaultShard) {
-        return this.client.getPlayer({ id: this.id }, shard);
     }
 }
 
-module.exports = Player;
+module.exports = PlayerSeason;
 </code></pre>
         </article>
     </section>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Player.js - Documentation</title>
+    <title>Season.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Player.js</h1>
+    <h1 class="page-title">Season.js</h1>
     
 
     
@@ -39,12 +39,11 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Match = require('./matches/Match');
-/**
- * An API returned player object
- * @class Player
+            <pre class="prettyprint source linenums"><code>/**
+ * An API returned Season object
+ * @class Season
  */
-class Player {
+class Season {
     constructor(content, client) {
         /**
          * The client that created the Player
@@ -59,13 +58,13 @@ class Player {
         }
 
         /**
-         * API id of the player
+         * Season  ID
          * @type {string}
          */
         this.id = content.id;
 
         /**
-         * If the player contains full data or needs `.fetch()`
+         * If the season contains full data, like it's attributes
          * @type {boolean}
          */
         this.full = true;
@@ -73,54 +72,28 @@ class Player {
         /**
          * Attributes of the Player
          * @type {Object}
-         * @property {string} attributes.name PUBG player name
-         * @property {string} attributes.shardId Platform-region shard
-         * @property {Date} attributes.createdAt Date at which the player account was created
-         * @property {string} attributes.patchVersion Version of the game
-         * @property {string} attributes.titleId Identifies the studio and game
+         * @property {boolean} attributes.isCurrentSeason Indicates if the season is active
+         * @property {boolean} attributes.shardId Indicates if the season is not active
          */
         this.attributes = {
-            name: content.attributes.name,
-            shardId: content.attributes.shardId,
-            createdAt: new Date(content.attributes.createdAt),
-            patchVersion: content.attributes.patchVersion,
-            titleId: content.attributes.titleId,
-        };
-
-        /**
-         * References to resource objects related to this player
-         * @type {Object}
-         * @property {Array&lt;Asset>} relationships.assets NOT IN API YET: Array of all assets of the player
-         * @property {Array&lt;Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
-         */
-        this.relationships = {
-            assets: content.relationships.assets.data,
-            matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
+            isCurrentSeason: content.attributes.isCurrentSeason,
+            isOffSeason: content.attributes.isOffseason,
         };
     }
 
     /**
      * Get a player season object
-     * @param {(string|Season)} season The season of the player season
+     * @param {(string|Player)} player The player of the player season
+     * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
      * @returns {Promise&lt;PlayerSeason>}
-     * @memberof Player
+     * @memberof Season
      */
-    getPlayerSeason(season) {
-        return this.client.getPlayerStats(this, season);
-    }
-
-    /**
-     * Fetches the full match
-     * @param {string} [shard=this.client.defaultShard] ShardId to fetch the player from
-     * @returns {Promise&lt;Match>}
-     * @memberof Player
-     */
-    fetch(shard = this.client.defaultShard) {
-        return this.client.getPlayer({ id: this.id }, shard);
+    getPlayerSeason(player, shard) {
+        return this.client.getPlayerStats(player, this, shard);
     }
 }
 
-module.exports = Player;
+module.exports = Season;
 </code></pre>
         </article>
     </section>

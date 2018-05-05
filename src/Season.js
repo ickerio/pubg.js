@@ -44,8 +44,8 @@ class Season {
      * Get a player season object
      * @param {(string|Player)} player The player of the player season
      * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
-     * @returns {Promise<Object>}
-     * @memberof Client
+     * @returns {Promise<PlayerSeason>}
+     * @memberof Season
      */
     getPlayerSeason(player, shard) {
         return this.client.getPlayerStats(player, this, shard);

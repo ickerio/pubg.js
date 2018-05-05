@@ -74,7 +74,7 @@ class Client {
      * @param {(string|Player)} player The player of the player season
      * @param {(string|Season)} season The season of the player season
      * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
-     * @returns {Promise<Object>}
+     * @returns {Promise<PlayerSeason>}
      * @memberof Client
      */
     getPlayerSeason(player, season, shard) {

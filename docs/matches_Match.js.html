@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Player.js - Documentation</title>
+    <title>matches/Match.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Player.js</h1>
+    <h1 class="page-title">matches/Match.js</h1>
     
 
     
@@ -39,13 +39,15 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Match = require('./matches/Match');
+            <pre class="prettyprint source linenums"><code>const Asset = require('./Asset');
+const Roster = require('./Roster');
+
 /**
- * An API returned player object
- * @class Player
+ * Match objects contain the results of a completed match such as the game mode played, duration, and which players participated
+ * @class Match
  */
-class Player {
-    constructor(content, client) {
+class Match {
+    constructor(content, client, included) {
         /**
          * The client that created the Player
          * @type {Client}
@@ -65,62 +67,71 @@ class Player {
         this.id = content.id;
 
         /**
-         * If the player contains full data or needs `.fetch()`
+         * If the match contains full data or needs `.fetch()`
          * @type {boolean}
          */
         this.full = true;
 
         /**
-         * Attributes of the Player
+         * Attributes of the Match
          * @type {Object}
-         * @property {string} attributes.name PUBG player name
+         * @property {Date} attributes.createdAt Time this match object was stored in the API
+         * @property {number} attributes.duration Length of the match
+         * @property {string} attributes.gameMode Game mode played
+         * * duo, duo-fpp, solo, solo-fpp, squad, squad-fpp
+         * @property {string} attributes.mapName Map name
+         * * Desert_Main, Erangel_Main
+         * @property {string} attributes.patchVersion N/A
          * @property {string} attributes.shardId Platform-region shard
-         * @property {Date} attributes.createdAt Date at which the player account was created
-         * @property {string} attributes.patchVersion Version of the game
+         * @property {Object} attributes.stats N/A
+         * @property {Object} attributes.tags N/A
          * @property {string} attributes.titleId Identifies the studio and game
          */
         this.attributes = {
-            name: content.attributes.name,
-            shardId: content.attributes.shardId,
             createdAt: new Date(content.attributes.createdAt),
+            duration: content.attributes.duration,
+            gameMode: content.attributes.gameMode,
+            mapName: content.attributes.mapName,
             patchVersion: content.attributes.patchVersion,
+            shardId: content.attributes.shardId,
+            stats: content.attributes.stats,
+            tags: content.attributes.tags,
             titleId: content.attributes.titleId,
         };
 
         /**
-         * References to resource objects related to this player
+         * Relations of the Match
          * @type {Object}
-         * @property {Array&lt;Asset>} relationships.assets NOT IN API YET: Array of all assets of the player
-         * @property {Array&lt;Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
+         * @property {Array&lt;Asset>} relationships.assets Array of all refferenced assets
+         * @property {Array&lt;Roster>} relationships.rosters Array of all refferenced rosters
          */
         this.relationships = {
-            assets: content.relationships.assets.data,
-            matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
+            assets: content.relationships.assets.data.map(p => new Asset(included.find(i => i.type === 'asset' &amp;&amp; i.id === p.id), included)),
+            // eslint-disable-next-line
+            rosters: content.relationships.rosters.data.map(p => new Roster(included.find(i => i.type === 'roster' &amp;&amp; i.id === p.id), included)),
         };
     }
 
     /**
-     * Get a player season object
-     * @param {(string|Season)} season The season of the player season
-     * @returns {Promise&lt;PlayerSeason>}
-     * @memberof Player
+     * Fetches the full match
+     * @returns {Promise&lt;Match>}
+     * @memberof Match
      */
-    getPlayerSeason(season) {
-        return this.client.getPlayerStats(this, season);
+    fetch() {
+        return this.client.getMatch(this.id);
     }
 
     /**
-     * Fetches the full match
-     * @param {string} [shard=this.client.defaultShard] ShardId to fetch the player from
-     * @returns {Promise&lt;Match>}
-     * @memberof Player
+     * Fetches telemetry data of the match
+     * @returns {Promise&lt;Object>}
+     * @memberof Match
      */
-    fetch(shard = this.client.defaultShard) {
-        return this.client.getPlayer({ id: this.id }, shard);
+    fetchTelemetry() {
+        return this.client.getTelemetry(this.relationships.assets[0].attributes.URL);
     }
 }
 
-module.exports = Player;
+module.exports = Match;
 </code></pre>
         </article>
     </section>
