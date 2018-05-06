@@ -8,7 +8,7 @@ A powerful and light PlayerUnknown's Battlegrounds stats API wrapper,<br/>for No
 
 <p align="center">
   <a href="https://travis-ci.org/ickerio/pubg.js">
-    <img src="https://travis-ci.org/ianstormtaylor/pubg.js.svg?branch=master">
+    <img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/pubg.js">
     <img src="https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600">

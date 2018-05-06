@@ -65,7 +65,7 @@ class Player {
      * @memberof Player
      */
     getPlayerSeason(season) {
-        return this.client.getPlayerStats(this, season);
+        return this.client.getPlayerSeason(this, season);
     }
 
     /**

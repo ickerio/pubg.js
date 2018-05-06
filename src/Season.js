@@ -48,7 +48,7 @@ class Season {
      * @memberof Season
      */
     getPlayerSeason(player, shard) {
-        return this.client.getPlayerStats(player, this, shard);
+        return this.client.getPlayerSeason(player, this, shard);
     }
 }
 

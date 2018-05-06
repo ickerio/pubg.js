@@ -1,5 +1,9 @@
 # pubg.js Changelog
 
+### v3.5.2
+ - Small bugfix for Season.getPlayerSeason and Player.getPlayerSeason
+ - All classes are now exposed in index.js
+
 ### v3.5.1
  - *Mainly* DOCUMENTATION UPDATE
  - New docs, better theme
