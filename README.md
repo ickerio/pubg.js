@@ -7,18 +7,18 @@ A powerful and light PlayerUnknown's Battlegrounds stats API wrapper,<br/>for No
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/ickerio/pubg.js">
-    <img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master">
+   <a href="https://www.npmjs.com/package/pubg.js">
+    <img src="https://img.shields.io/npm/v/pubg.js.svg">
   </a>
   <a href="https://www.npmjs.com/package/pubg.js">
     <img src="https://img.shields.io/npm/dt/pubg.js.svg?maxAge=3600">
   </a>
-  <a href="./package.json">
-    <img src="https://img.shields.io/david/ickerio/pubg.js.svg?maxAge=3600">
+  <a href="https://travis-ci.org/ickerio/pubg.js">
+    <img src="https://travis-ci.org/ickerio/pubg.js.svg?branch=master">
   </a>
 </p>
 
-###### [Wrapper Documentation](https://ickerio.github.io/pubg.js/) | [API Documentation](https://documentation.playbattlegrounds.com/en/introduction.html) | [Changelog](CHANGELOG.md) | [Issues](#issues)
+###### [pubg.js docs](https://ickerio.github.io/pubg.js/) | [API Documentation](https://documentation.playbattlegrounds.com/en/introduction.html) | [Changelog](CHANGELOG.md) | [Issues](#issues)
 
 
 pubg.js makes it easy to interact with [the pubg dev api](https://developer.playbattlegrounds.com/). Written with an inteligent and performant api, making it easy for anyone to access a massive database of pubg data, including players stats, matches, teams, events of matches and much more. Built with customizable caching, for maximum performence, and quicker data retrieval. 
