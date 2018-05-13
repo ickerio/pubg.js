@@ -34,7 +34,7 @@ pubg.js makes it easy to interact with [the pubg dev api](https://developer.play
 ```js
 // Require model and initiate client with api key
 const pubg = require('pubg.js');
-const client = new pubg.Client('yourKey');
+const client = new pubg.Client('yourKey', 'region');
 
 // Get a single player using their name
 const player = client.getPlayer({name: 'yeye155'})
