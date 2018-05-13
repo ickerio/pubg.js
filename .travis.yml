@@ -23,3 +23,6 @@ jobs:
 branches:
     except:
     - webpack
+cache:
+    directories:
+    - node_modules
