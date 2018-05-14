@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint && npm run tests",
     "lint": "eslint src *.js",
-    "tests": "node test/index.js",
+    "tests": "mocha \"test/**/*.js\"",
     "webpack": "./node_modules/.bin/webpack --config webpack.config.js",
     "docs": "./node_modules/.bin/jsdoc src src/matches src/playerseason README.md -t ./node_modules/minami && echo pubg.js.org > ./out/CNAME"
   },
