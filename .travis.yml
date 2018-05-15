@@ -19,3 +19,9 @@ jobs:
         name: Travis Deploy Bot
         on:
           branch: master
+branches:
+    except:
+    - webpack
+cache:
+    directories:
+    - node_modules

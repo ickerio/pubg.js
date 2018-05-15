@@ -61,8 +61,8 @@ class Match {
         /**
          * Relations of the Match
          * @type {Object}
-         * @property {Array<Asset>} relationships.assets Array of all refferenced assets
-         * @property {Array<Roster>} relationships.rosters Array of all refferenced rosters
+         * @property {Array<Asset>} relationships.assets Array of all referenced assets
+         * @property {Array<Roster>} relationships.rosters Array of all referenced rosters
          */
         this.relationships = {
             assets: content.relationships.assets.data.map(p => new Asset(included.find(i => i.type === 'asset' && i.id === p.id), included)),
