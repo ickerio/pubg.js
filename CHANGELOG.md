@@ -1,5 +1,10 @@
 # pubg.js Changelog
 
+## v3.5.3
+ - Changed badges
+ - Spelling fixes in README
+ - Many Travis changes and a complete test suite soon to come thanks VERY much to [jamesc2400](https://github.com/jamesc2400)
+
 ### v3.5.2
  - Small bugfix for Season.getPlayerSeason and Player.getPlayerSeason
  - All classes are now exposed in index.js
