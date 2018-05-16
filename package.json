@@ -8,7 +8,7 @@
     "lint": "eslint src *.js",
     "tests": "node test/index.js",
     "webpack": "./node_modules/.bin/webpack --config webpack.config.js",
-    "docs": "./node_modules/.bin/jsdoc src src/matches src/playerseason README.md -d ./docs -t ./node_modules/minami"
+    "docs": "./node_modules/.bin/jsdoc src src/matches src/playerseason README.md -t ./node_modules/minami"
   },
   "repository": {
     "type": "git",
