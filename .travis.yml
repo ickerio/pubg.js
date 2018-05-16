@@ -1,27 +1,39 @@
 language: node_js
 node_js:
-- '8'
+  - 8
 sudo: false
 install:
 - npm install
 jobs:
   include:
-    - stage: Test
-      script: npm run test
+    - stage: Tests
+        script: npm run test
     - stage: Webpack Release
-      script: npm run webpack
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        local_dir: out
-        target_branch: webpack
-        name: Travis Deploy Bot
-        on:
-          branch: master
+        script: npm run webpack
+        deploy:
+          provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: out
+          target_branch: webpack
+          name: Travis Webpack Deploy
+          on: 
+            branch: master
+    - stage: Docs Release
+        script: npm run docs
+        deploy:
+          provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: out
+          target_branch: gh-pages
+          name: Travis Docs Deploy
+          on: 
+            branch: master
 branches:
-    except:
+  except:
     - webpack
+    - gh-pages
 cache:
-    directories:
+  directories:
     - node_modules
