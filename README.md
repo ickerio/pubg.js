@@ -18,7 +18,7 @@ A powerful and light PlayerUnknown's Battlegrounds stats API wrapper,<br/>for No
   </a>
 </p>
 
-###### [pubg.js docs](https://ickerio.github.io/pubg.js/) | [API Documentation](https://documentation.playbattlegrounds.com/en/introduction.html) | [Changelog](CHANGELOG.md) | [Issues](#issues)
+###### [pubg.js docs](https://ickerio.github.io/pubg.js/) | [api docs](https://documentation.playbattlegrounds.com/en/introduction.html) | [Changelog](CHANGELOG.md) | [Issues](#issues)
 
 
 pubg.js makes it easy to interact with [the pubg dev api](https://developer.playbattlegrounds.com/). Written with an intelligent and performant api, making it easy for anyone to access a massive database of pubg data, including players stats, matches, teams, events of matches and much more. Built with customizable caching, for maximum performance, and quicker data retrieval. 
@@ -60,9 +60,8 @@ const player = client.getSamples()
 ```
 
 # Web
-> Currently untested in v3
 
-In addition to the Node.js environment, pubg.js also fully supports the web. Useful for interacting with the pubg api with static pages or without the use of a backend. All up, the minified version comes down to as little as 37KB. You can find the latest version in the [webpack](https://github.com/ickerio/pubg.js/tree/webpack) branch. To use it, choose one of the following options and `pubg` will be defined in the window scope. Here's a [jsfiddle](https://jsfiddle.net/mat4qfwn/) to get you started!
+In addition to the Node.js environment, pubg.js also fully supports the web. Useful for interacting with the pubg api with static pages or without the use of a backend. All up, the minified version comes down to as little as 17KB. You can find the latest version in the [webpack](https://github.com/ickerio/pubg.js/tree/webpack) branch. To use it, choose one of the following options and `pubg` will be defined in the window scope. It's as simple as the example above but without the need to `require` the package first.
  - **Download it**: [normal](https://raw.githubusercontent.com/ickerio/pubg.js/webpack/pubg.js), [minified](https://raw.githubusercontent.com/ickerio/pubg.js/webpack/pubg.min.js)
  - **Production**: [normal](https://cdn.rawgit.com/ickerio/pubg.js/webpack/pubg.js), [minified](https://cdn.rawgit.com/ickerio/pubg.js/webpack/pubg.min.js)
  - **Development**: [normal](https://rawgit.com/ickerio/pubg.js/webpack/pubg.js), [minified](https://rawgit.com/ickerio/pubg.js/webpack/pubg.min.js)

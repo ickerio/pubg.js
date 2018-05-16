@@ -4,6 +4,7 @@
  - Changed badges
  - Spelling fixes in README
  - Many Travis changes and a complete test suite soon to come thanks VERY much to [jamesc2400](https://github.com/jamesc2400)
+ - **Webpack** is now fully tested and confirmed fully functional! Use pubg.js in your browser! Woo :))
 
 ### v3.5.2
  - Small bugfix for Season.getPlayerSeason and Player.getPlayerSeason
