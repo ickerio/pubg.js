@@ -42,6 +42,9 @@ class Client {
      * @returns {Promise<Array<Player>>|Promise<Player>}
      * @memberof Client
      */
+
+    // TODO Split these methods into two parts to allow the testing suite to inject dummy data
+
     getPlayer(args, shard = this.defaultShard) {
         if (typeof args !== 'object' || typeof shard !== 'string') throw new Error('Requires (object, !string)');
 
