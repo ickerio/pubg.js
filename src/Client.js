@@ -17,8 +17,8 @@ class Client {
     constructor(key, defaultShard = 'pc-oc') {
         if (!key) {
             throw new Error('No API key passed.');
-        } else if (!(Util.verifyShard(defaultShard))) {
-            throw new Error('Invalid shard.')
+        } else if (!Util.verifyShard(defaultShard)) {
+            throw new Error('Invalid shard.');
         }
 
         /**
