@@ -2,6 +2,7 @@ const snekfetch = require('snekfetch');
 const Package = require('../package.json');
 
 const Util = require('./util/Util');
+const Errors = require('./util/Errors');
 const Player = require('./Player');
 const Match = require('./matches/Match');
 const Status = require('./Status');
@@ -16,9 +17,9 @@ const PlayerSeason = require('./playerseason/PlayerSeason');
 class Client {
     constructor(key, defaultShard = 'pc-oc') {
         if (!key) {
-            throw new Error('No API key passed.');
+            throw new Error(Errors.NO_API_KEY);
         } else if (!Util.verifyShard(defaultShard)) {
-            throw new Error('Invalid shard.');
+            throw new Error(Errors.INVALID_SHARD_ID);
         }
 
         /**
