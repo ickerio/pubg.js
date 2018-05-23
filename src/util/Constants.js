@@ -1,6 +1,8 @@
 module.exports = {
     BASE_URL: 'https://api.playbattlegrounds.com',
 
+    DEFAULT_SHARD: 'pc-oc',
+
     SHARDS: [
         'xbox-as',
         'xbox-eu',
