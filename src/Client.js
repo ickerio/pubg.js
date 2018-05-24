@@ -48,7 +48,6 @@ class Client {
      * @returns {Promise<Array<Player>>|Promise<Player>}
      * @memberof Client
      */
-
     getPlayer(args, shard = this.defaultShard) {
         if (typeof args !== 'object' || typeof shard !== 'string') throw new Error('Requires (object, !string)');
 
