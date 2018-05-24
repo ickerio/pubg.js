@@ -1,6 +1,6 @@
 {
   "name": "pubg.js",
-  "version": "3.5.2",
+  "version": "3.5.3",
   "description": "A powerful Playerunknown's Battlegrounds JavaScript API Wrapper",
   "main": "src/index.js",
   "scripts": {
