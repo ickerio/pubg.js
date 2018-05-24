@@ -1,7 +1,9 @@
 const snekfetch = require('snekfetch');
 const Package = require('../package.json');
 
+const Constants = require('./util/Constants');
 const Util = require('./util/Util');
+const Errors = require('./util/Errors');
 const Player = require('./Player');
 const Match = require('./matches/Match');
 const Status = require('./Status');
@@ -14,9 +16,13 @@ const PlayerSeason = require('./playerseason/PlayerSeason');
  * @param {string} [defaultShard='pc-oc'] Default shard to use if none provided in methods
  */
 class Client {
-    constructor(key, defaultShard = 'pc-oc') {
+    constructor(key, defaultShard = Constants.DEFAULT_SHARD) {
         if (!key) {
-            throw new Error('No API key passed.');
+            throw new Error(Errors.NO_API_KEY);
+        } else if (typeof key !== 'string') {
+            throw new Error(Errors.INVALID_API_KEY);
+        } else if (!Util.verifyShard(defaultShard)) {
+            throw new Error(Errors.NON_EXISTENT_SHARD_ID);
         }
 
         /**
