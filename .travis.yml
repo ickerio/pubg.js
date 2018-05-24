@@ -30,6 +30,14 @@ jobs:
         name: Travis Docs Deploy
         on: 
           branch: stable
+    - stage: NPM Deploy
+      deploy:
+        provider: npm
+        email: "ADD EMAIL ADDRESS HERE"
+        api_key: "ADD AUTH TOKEN HERE"
+        on:
+          tags: true
+          branch: stable
 branches:
   except:
     - webpack
