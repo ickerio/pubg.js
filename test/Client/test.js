@@ -22,7 +22,7 @@ describe('Client', function() {
 	it('should throw an error if an invalid region is passed to it', function() {
 		expect(function() {
 			client = new Client('non-existent-key', 'france')
-		}).to.throw(Error).with.property('message', Errors.INVALID_SHARD_ID)
+		}).to.throw(Error).with.property('message', Errors.NON_EXISTENT_SHARD_ID)
 	})
 
 	it('should store the API key and shard correctly', function() {

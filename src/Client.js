@@ -22,7 +22,7 @@ class Client {
         } else if (typeof key !== 'string') {
             throw new Error(Errors.INVALID_API_KEY);
         } else if (!Util.verifyShard(defaultShard)) {
-            throw new Error(Errors.INVALID_SHARD_ID);
+            throw new Error(Errors.NON_EXISTENT_SHARD_ID);
         }
 
         /**
