@@ -26,7 +26,7 @@ describe('Client', function() {
 	})
 
 	it('should store the API key and shard correctly', function() {
-		ApiKey = 'mykey'
+		ApiKey = 'non-existent-key'
 		region = 'pc-na'
 		client = new Client(ApiKey, region)
 		expect(client).to.have.property('key').that.equals(ApiKey)
@@ -34,7 +34,7 @@ describe('Client', function() {
 	})
 
 	it('should set a defaultShard if one is not specified', function() {
-		client = new Client('mykey')
+		client = new Client('non-existent-key')
 		expect(client).to.have.property('defaultShard', Constants.DEFAULT_SHARD)
 	})
 })
