@@ -18,7 +18,7 @@ A powerful and light PlayerUnknown's Battlegrounds stats API wrapper,<br/>for No
   </a>
 </p>
 
-###### [pubg.js docs](https://ickerio.github.io/pubg.js/) | [api docs](https://documentation.playbattlegrounds.com/en/introduction.html) | [changelog](CHANGELOG.md) | [issues](#issues)
+###### [pubg.js docs](https://pubg.js.org) | [api docs](https://documentation.playbattlegrounds.com/en/introduction.html) | [changelog](CHANGELOG.md) | [issues](#issues)
 
 
 pubg.js makes it easy to interact with [the pubg dev api](https://developer.playbattlegrounds.com/). Written with an intelligent and performant api, making it easy for anyone to access a massive database of pubg data, including players stats, matches, teams, events of matches and much more. Built with customizable caching, for maximum performance, and quicker data retrieval. Includes full documentation and IDE auto completion support.
