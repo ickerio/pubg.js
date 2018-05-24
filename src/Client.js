@@ -19,6 +19,8 @@ class Client {
     constructor(key, defaultShard = Constants.DEFAULT_SHARD) {
         if (!key) {
             throw new Error(Errors.NO_API_KEY);
+        } else if (typeof key !== 'string') {
+            throw new Error(Errors.INVALID_API_KEY);
         } else if (!Util.verifyShard(defaultShard)) {
             throw new Error(Errors.INVALID_SHARD_ID);
         }

@@ -13,6 +13,12 @@ describe('Client', function() {
 		}).to.throw(Error).with.property('message', Errors.NO_API_KEY)
 	})
 
+	it('should throw an error when a non-string is passed as an API key', function() {
+		expect(function() {
+			client = new Client(123)
+		}).to.throw(Error).with.property('message', Errors.INVALID_API_KEY)
+	})
+
 	it('should throw an error if an invalid region is passed to it', function() {
 		expect(function() {
 			client = new Client('non-existent-key', 'france')
