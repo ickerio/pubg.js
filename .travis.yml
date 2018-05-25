@@ -18,7 +18,7 @@ jobs:
         target_branch: webpack
         name: Travis Webpack Deploy
         on: 
-          branch: master
+          branch: stable
     - stage: Docs Release
       script: npm run docs
       deploy:
@@ -29,7 +29,15 @@ jobs:
         target_branch: gh-pages
         name: Travis Docs Deploy
         on: 
-          branch: master
+          branch: stable
+    - stage: NPM Deploy
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        on:
+          tags: true
+          branch: stable
 branches:
   except:
     - webpack
