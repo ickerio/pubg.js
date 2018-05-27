@@ -62,7 +62,7 @@ class GameModeStats {
          * Longest kill
          * @type {string}
          */
-        this.longestKill = content.longKill;
+        this.longestKill = content.longestKill;
 
         /**
          * Longest time survived
@@ -155,10 +155,10 @@ class GameModeStats {
         this.walkDistance = content.walkDistance;
 
         /**
-         * Weapon Acquired
+         * Weapons Acquired
          * @type {string}
          */
-        this.weaponAcquired = content.weaponAcquired;
+        this.weaponsAcquired = content.weaponsAcquired;
 
         /**
          * Weekly kills
