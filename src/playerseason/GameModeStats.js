@@ -161,7 +161,7 @@ class GameModeStats {
         this.walkDistance = content.walkDistance;
 
         /**
-         * Weapon Acquired
+         * Weapons Acquired
          * @type {string}
          */
         this.weaponsAcquired = content.weaponsAcquired;
