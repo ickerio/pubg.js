@@ -53,6 +53,12 @@ class GameModeStats {
         this.heals = content.heals;
 
         /**
+         * Points from kills
+         * @type {string}
+         */
+        this.killPoints = content.killPoints;
+
+        /**
          * Kills
          * @type {string}
          */
@@ -62,7 +68,7 @@ class GameModeStats {
          * Longest kill
          * @type {string}
          */
-        this.longestKill = content.longKill;
+        this.longestKill = content.longestKill;
 
         /**
          * Longest time survived
@@ -158,7 +164,7 @@ class GameModeStats {
          * Weapon Acquired
          * @type {string}
          */
-        this.weaponAcquired = content.weaponAcquired;
+        this.weaponsAcquired = content.weaponsAcquired;
 
         /**
          * Weekly kills
