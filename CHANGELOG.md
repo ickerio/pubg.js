@@ -1,9 +1,11 @@
 # pubg.js Changelog
 
+## vX.X.X (Upcoming)
+ - Support server plug in README
+
 ## v3.5.4
  - Fixed values `longestKill` and `weaponsAcquired` in GameModeStats class
  - Added `killPoints` in GameModeStats class
-
 
 ## v3.5.3
  - Changed badges
