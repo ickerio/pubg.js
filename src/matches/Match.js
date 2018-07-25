@@ -40,6 +40,7 @@ class Match {
          * * duo, duo-fpp, solo, solo-fpp, squad, squad-fpp
          * @property {string} attributes.mapName Map name
          * * Desert_Main, Erangel_Main
+         * @property {boolean} isCustomMatch True if the match is a custom match
          * @property {string} attributes.patchVersion N/A
          * @property {string} attributes.shardId Platform-region shard
          * @property {Object} attributes.stats N/A
@@ -51,6 +52,7 @@ class Match {
             duration: content.attributes.duration,
             gameMode: content.attributes.gameMode,
             mapName: content.attributes.mapName,
+            isCustomMatch: content.attributes.isCustomMatch,
             patchVersion: content.attributes.patchVersion,
             shardId: content.attributes.shardId,
             stats: content.attributes.stats,

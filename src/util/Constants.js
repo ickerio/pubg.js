@@ -1,5 +1,5 @@
 module.exports = {
-    BASE_URL: 'https://api.playbattlegrounds.com',
+    BASE_URL: 'https://api.pubg.com',
 
     SHARDS: [
         'xbox-as',

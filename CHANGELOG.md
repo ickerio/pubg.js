@@ -1,7 +1,8 @@
 # pubg.js Changelog
 
-## vX.X.X (Upcoming)
- - Support server plug in README
+## v3.6.0 (Upcoming)
+ - Now up to date with v3.2.0 of the API
+ - Tournaments added
 
 ## v3.5.4
  - Fixed values `longestKill` and `weaponsAcquired` in GameModeStats class

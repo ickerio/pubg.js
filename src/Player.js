@@ -34,14 +34,12 @@ class Player {
          * @type {Object}
          * @property {string} attributes.name PUBG player name
          * @property {string} attributes.shardId Platform-region shard
-         * @property {Date} attributes.createdAt Date at which the player account was created
          * @property {string} attributes.patchVersion Version of the game
          * @property {string} attributes.titleId Identifies the studio and game
          */
         this.attributes = {
             name: content.attributes.name,
             shardId: content.attributes.shardId,
-            createdAt: new Date(content.attributes.createdAt),
             patchVersion: content.attributes.patchVersion,
             titleId: content.attributes.titleId,
         };

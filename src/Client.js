@@ -6,6 +6,7 @@ const Player = require('./Player');
 const Match = require('./matches/Match');
 const Status = require('./Status');
 const Season = require('./Season');
+const Tournament = require('./Tournament');
 const PlayerSeason = require('./playerseason/PlayerSeason');
 /**
  * The main hub for interacting with the pubg api, and starting point for any api instance
@@ -108,7 +109,30 @@ class Client {
     }
 
     /**
-     * Gets the status of the api
+     * Gets a list of all tournaments
+     * @returns {Promise<Array<Tournament>>}
+     * @memberof Client
+     */
+    getTournaments() {
+        return this._baseRequest({ endpoint: 'tournaments' })
+            .then(tournaments => tournaments.data.map(t => new Tournament(t, this)))
+            .catch(e => Promise.reject(e));
+    }
+
+    /**
+     * Gets the tournament with the matching id
+     * @param {string} id Tournament ID
+     * @returns {Promise<Tournament>}
+     * @memberof Client
+     */
+    getTournament(id) {
+        return this._baseRequest({ endpoint: `tournaments/${id}` })
+            .then(tournament => new Tournament(tournament.data))
+            .catch(e => Promise.reject(e.body.errors));
+    }
+
+    /**
+     * Gets a list of all past matches from the api
      * @param {Date} [createdAt] The starting search date for the matches
      * @param {string} [shard=this.defaultShard] The server shard to send the request to
      * @returns {Promise<Array<Match>>}

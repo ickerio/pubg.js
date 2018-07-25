@@ -26,6 +26,7 @@ class Participant {
                 revives: content.attributes.stats.revives,
                 rideDistance: content.attributes.stats.rideDistance,
                 roadKills: content.attributes.stats.roadKills,
+                swimDistance: content.attributes.stats.swimDistance,
                 teamKills: content.attributes.stats.teamKills,
                 timeSurvived: content.attributes.stats.timeSurvived,
                 vehicleDestroys: content.attributes.stats.vehicleDestroys,
