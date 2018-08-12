@@ -16,5 +16,6 @@ module.exports = {
         'pc-sea',
         'pc-sa',
         'pc-as',
+        'pc-tournament',
     ],
 };
