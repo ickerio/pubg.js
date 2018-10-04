@@ -1,6 +1,9 @@
 # pubg.js Changelog
 
-## v3.6.0 (Upcoming)
+## v3.7.0
+ - Updated for v6 of the API-ish
+
+## v3.6.0
  - Now up to date with v3.2.0 of the API
  - Tournaments added
 

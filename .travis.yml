@@ -8,17 +8,6 @@ jobs:
   include:
     - stage: Tests
       script: npm run test
-    - stage: Webpack Release
-      script: npm run webpack
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        local_dir: out
-        target_branch: webpack
-        name: Travis Webpack Deploy
-        on: 
-          branch: stable
     - stage: Docs Release
       script: npm run docs
       deploy:

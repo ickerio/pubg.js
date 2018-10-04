@@ -13,8 +13,6 @@ class Participant {
                 headshotKills: content.attributes.stats.headshotKills,
                 heals: content.attributes.stats.heals,
                 killPlace: content.attributes.stats.killPlace,
-                killPoints: content.attributes.stats.killPoints,
-                killPointsDelta: content.attributes.stats.killPointsDelta,
                 killStreaks: content.attributes.stats.killStreaks,
                 kills: content.attributes.stats.kills,
                 lastKillPoints: content.attributes.stats.lastKillPoints,
@@ -33,8 +31,7 @@ class Participant {
                 walkDistance: content.attributes.stats.walkDistance,
                 weaponsAcquired: content.attributes.stats.weaponsAcquired,
                 winPlace: content.attributes.stats.winPlace,
-                winPoints: content.attributes.stats.winPoints,
-                winPointsDelta: content.attributes.stats.winPointsDelta,
+                rankPoints: content.attributes.stats.rankPoints,
             },
         };
     }

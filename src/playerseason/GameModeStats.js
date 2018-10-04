@@ -53,12 +53,6 @@ class GameModeStats {
         this.heals = content.heals;
 
         /**
-         * Points from kills
-         * @type {string}
-         */
-        this.killPoints = content.killPoints;
-
-        /**
          * Kills
          * @type {string}
          */
@@ -173,12 +167,6 @@ class GameModeStats {
         this.weeklyKills = content.weeklyKills;
 
         /**
-         * Win points
-         * @type {string}
-         */
-        this.winPoints = content.winPoints;
-
-        /**
          * Win ratio
          * @type {string}
          */
@@ -189,6 +177,36 @@ class GameModeStats {
          * @type {string}
          */
         this.wins = content.wins;
+
+        /**
+         * Unknown
+         * @type {string}
+         */
+        this.bestRankPoints = content.bestRankPoints;
+
+        /**
+         * Wins gained within the last 24 hours
+         * @type {string}
+         */
+        this.dailyWins = content.dailyWins;
+
+        /**
+         * Unknown
+         * @type {string}
+         */
+        this.rankPoints = content.rankPoints;
+
+        /**
+         * Distance player has swam
+         * @type {string}
+         */
+        this.swimDistance = content.swimDistance;
+
+        /**
+         * Wins gained within the last 7 days
+         * @type {string}
+         */
+        this.weeklyWins = content.weeklyWins;
     }
 }
 
