@@ -59,11 +59,12 @@ class Player {
     /**
      * Get a player season object
      * @param {(string|Season)} season The season of the player season
+     * @param {string} [shard=this.attributes.shardId] The shard of the player season
      * @returns {Promise<PlayerSeason>}
      * @memberof Player
      */
-    getPlayerSeason(season) {
-        return this.client.getPlayerSeason(this, season);
+    getPlayerSeason(season, shard = this.attributes.shardId) {
+        return this.client.getPlayerSeason(this, season, shard);
     }
 
     /**

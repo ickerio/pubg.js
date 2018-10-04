@@ -17,5 +17,7 @@ module.exports = {
         'pc-sa',
         'pc-as',
         'pc-tournament',
+        'steam',
+        'kakao',
     ],
 };

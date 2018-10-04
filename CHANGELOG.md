@@ -1,5 +1,9 @@
 # pubg.js Changelog
 
+## v3.7.1
+ - Added steam and kakao as shards
+ - `<player>.getPlayerSeason` now takes shard as an optional argument
+
 ## v3.7.0
  - Updated for v6 of the API-ish
 
