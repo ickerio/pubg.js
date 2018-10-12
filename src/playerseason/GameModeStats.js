@@ -207,6 +207,26 @@ class GameModeStats {
          * @type {string}
          */
         this.weeklyWins = content.weeklyWins;
+
+        // DEPRECATED
+
+        /**
+         * Wins gained within the last 7 days
+         * @type {string}
+         */
+        this.weeklyWins = content.weeklyWins;
+
+        /**
+         * Points from winning
+         * @type {string}
+         */
+        this.winPoints = content.winPoints;
+
+        /**
+         * Points from kills
+         * @type {string}
+         */
+        this.killPoints = content.killPoints;
     }
 }
 

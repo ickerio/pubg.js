@@ -1,5 +1,8 @@
 # pubg.js Changelog
 
+## v3.7.2
+ - Removed winPoints and killPoints in previous patch. Added back as still needed for xbox. (Thanks Jovin!)
+
 ## v3.7.1
  - Added steam and kakao as shards
  - `<player>.getPlayerSeason` now takes shard as an optional argument
