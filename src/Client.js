@@ -1,4 +1,4 @@
-const snekfetch = require('snekfetch');
+const nodefetch = require('node-fetch');
 const Package = require('../package.json');
 
 const Util = require('./util/Util');
@@ -161,16 +161,16 @@ class Client {
      * @param {Object} options Object describing request
      * @param {string} options.endpoint Endpoint to hit of the api
      * @param {string} options.shard The server shard to send the request to
-     * @param {Object} [options.query={}] Snekfetch options
      * @returns {Promise<Object>}
      * @memberof Client
      */
     _baseRequest(options = {}) {
         const url = options.url || Util.constructURL(options.endpoint, options.shard);
         if (!url) throw new Error('Invalid shard');
-        return snekfetch.get(url)
-            .set(this._headers)
-            .query(options.query || {})
+        return nodefetch(url, {
+            method: 'get',
+            headers: this._headers,
+        })
             .then(r => r.body);
     }
 
