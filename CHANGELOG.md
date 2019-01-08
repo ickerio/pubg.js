@@ -1,5 +1,10 @@
 # pubg.js Changelog
 
+## v3.7.3
+ - Added missing regions
+ - Fixed typos
+ -
+
 ## v3.7.2
  - Removed winPoints and killPoints in previous patch. Added back as still needed for xbox. (Thanks Jovin!)
 
