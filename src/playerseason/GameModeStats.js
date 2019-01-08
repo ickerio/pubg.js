@@ -182,7 +182,7 @@ class GameModeStats {
          * Unknown
          * @type {string}
          */
-        this.bestRankPoints = content.bestRankPoints;
+        this.bestRankPoint = content.bestRankPoint;
 
         /**
          * Wins gained within the last 24 hours
