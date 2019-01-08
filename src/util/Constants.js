@@ -19,5 +19,6 @@ module.exports = {
         'pc-tournament',
         'steam',
         'kakao',
+        'psn',
     ],
 };
