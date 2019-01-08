@@ -6,6 +6,7 @@ module.exports = {
         'xbox-eu',
         'xbox-na',
         'xbox-oc',
+        'xbox-sa',
         'pc-krjp',
         'pc-jp',
         'pc-na',
