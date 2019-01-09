@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint && npm run tests",
     "lint": "eslint src *.js",
-    "tests": "node test/index.js",
+    "tests": "mocha \"test/**/*.js\"",
     "webpack": "./node_modules/.bin/webpack --config webpack.config.js",
     "docs": "./node_modules/.bin/jsdoc src src/matches src/playerseason README.md -t ./node_modules/minami && echo pubg.js.org > ./out/CNAME"
   },
@@ -30,9 +30,11 @@
     "node-fetch": "^2.2.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "jsdoc": "^3.5.5",
     "minami": "^1.2.3",
+    "mocha": "^5.1.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^3.11.0"
   }

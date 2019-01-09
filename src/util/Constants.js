@@ -1,6 +1,8 @@
 module.exports = {
     BASE_URL: 'https://api.pubg.com',
 
+    DEFAULT_SHARD: 'pc-oc',
+
     SHARDS: [
         'kakao',
         'psn',
