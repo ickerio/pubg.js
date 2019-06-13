@@ -1,5 +1,11 @@
 # pubg.js Changelog
 
+## v3.8.0
+- Added getManyPlayerSeason()
+- Added getCurrent Season()
+- Changed node-fetch for axios: Just personal preference.
+- Updated GameModeStats and Participant removing stats no longer supported by the PUBG API
+
 ## v3.7.3
  - Added missing regions
  - Fixed typos
