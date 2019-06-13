@@ -171,16 +171,17 @@ class Client {
 
         if (!args.ids && !args.names && !args.players) throw new Error('Invalid use of <Client>.getManyPlayerSeason()');
 
+        let playerCount = args.ids ? args.ids.length : args.names ? args.names.length : args.players.length;
+        if (playerCount > 10) {
+            throw new Error('<Client>.getManyPlayerSeason() can only fetch up to 10 players.');
+        }
         const playersArray = args.ids ?
             await this.getPlayer({ id: args.ids }, shard) :
             args.names ?
                 await this.getPlayer({ name: args.names }, shard) :
                 args.players;
-        if (playersArray.length > 10) {
-            throw new Error(
-                '<Client>.getManyPlayerSeason() can only fetch up to 10 players.'
-            );
-        } else if (playersArray.length < 6) {
+
+        if (playersArray.length < 6) {
             return Promise.all(
                 playersArray.map(player =>
                     this.getPlayerSeason(player, season, shard)
@@ -324,7 +325,7 @@ class Client {
             .get(url, {
                 headers: this._headers,
                 params: options.params,
-                timeout: 10000,
+                timeout: 5000,
             })
             .then(r => r.data)
             .catch(e => {
