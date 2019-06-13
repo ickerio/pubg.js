@@ -12,7 +12,14 @@ class Roster {
             won: Boolean(content.attributes.won),
         };
         this.relationships = {
-            participants: content.relationships.participants.data.map(p => new Participant(included.find(i => i.type === 'participant' && i.id === p.id))),
+            participants: content.relationships.participants.data.map(
+                p =>
+                    new Participant(
+                        included.find(
+                            i => i.type === 'participant' && i.id === p.id
+                        )
+                    )
+            ),
             team: content.relationships.team.data,
         };
     }

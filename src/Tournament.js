@@ -25,7 +25,11 @@ class Tournament {
          * @property {Array<Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
          */
         this.relationships = {
-            matches: this.full ? content.relationships.matches.data.map(m => new Match(m.id, this.client)) : [],
+            matches: this.full ?
+                content.relationships.matches.data.map(
+                    m => new Match(m.id, this.client)
+                ) :
+                [],
         };
     }
 

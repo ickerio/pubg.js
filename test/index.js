@@ -53,7 +53,7 @@ const season = 'division.bro.official.pc-2018-03';
 //   );
 
 client
-  .getManyPlayerSeason({ names: ['OGSule', 'LEYED'] }, season)
+  .getManyPlayerSeason({ names: playerNames }, season)
   .then(
     res => console.log(util.inspect(res, false, null, true /* enable colors */))
     // console.log(res)
