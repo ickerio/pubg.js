@@ -1,10 +1,7 @@
 const axios = require('axios');
 const _ = require('lodash');
 
-const util = require('util');
-
 const Package = require('../package.json');
-
 const Util = require('./util/Util');
 const Player = require('./Player');
 const Match = require('./matches/Match');
@@ -12,7 +9,6 @@ const Status = require('./Status');
 const Season = require('./Season');
 const Tournament = require('./Tournament');
 const PlayerSeason = require('./playerseason/PlayerSeason');
-
 const { GAME_MODES } = require('./util/Constants');
 /**
  * The main hub for interacting with the pubg api, and starting point for any api instance
