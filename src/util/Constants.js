@@ -28,4 +28,6 @@ module.exports = {
         'xbox-oc',
         'xbox-sa',
     ],
+
+    GAME_MODES: ['solo', 'solo-fpp', 'duo', 'duo-fpp', 'squad', 'squad-fpp'],
 };

@@ -15,10 +15,7 @@ class Participant {
                 killPlace: content.attributes.stats.killPlace,
                 killStreaks: content.attributes.stats.killStreaks,
                 kills: content.attributes.stats.kills,
-                lastKillPoints: content.attributes.stats.lastKillPoints,
-                lastWinPoints: content.attributes.stats.lastWinPoints,
                 longestKill: content.attributes.stats.longestKill,
-                mostDamage: content.attributes.stats.mostDamage,
                 name: content.attributes.stats.name,
                 playerId: content.attributes.stats.playerId,
                 revives: content.attributes.stats.revives,
@@ -31,7 +28,6 @@ class Participant {
                 walkDistance: content.attributes.stats.walkDistance,
                 weaponsAcquired: content.attributes.stats.weaponsAcquired,
                 winPlace: content.attributes.stats.winPlace,
-                rankPoints: content.attributes.stats.rankPoints,
             },
         };
     }

@@ -52,7 +52,9 @@ class Player {
          */
         this.relationships = {
             assets: content.relationships.assets.data,
-            matches: content.relationships.matches.data.map(m => new Match(m.id, this.client)),
+            matches: content.relationships.matches.data.map(
+                m => new Match(m.id, this.client)
+            ),
         };
     }
 

@@ -69,9 +69,23 @@ class Match {
          * @property {Array<Roster>} relationships.rosters Array of all referenced rosters
          */
         this.relationships = {
-            assets: content.relationships.assets.data.map(p => new Asset(included.find(i => i.type === 'asset' && i.id === p.id), included)),
+            assets: content.relationships.assets.data.map(
+                p =>
+                    new Asset(
+                        included.find(i => i.type === 'asset' && i.id === p.id),
+                        included
+                    )
+            ),
             // eslint-disable-next-line
-            rosters: content.relationships.rosters.data.map(p => new Roster(included.find(i => i.type === 'roster' && i.id === p.id), included)),
+            rosters: content.relationships.rosters.data.map(
+                p =>
+                    new Roster(
+                        included.find(
+                            i => i.type === 'roster' && i.id === p.id
+                        ),
+                        included
+                    )
+            ),
         };
     }
 
@@ -90,7 +104,9 @@ class Match {
      * @memberof Match
      */
     fetchTelemetry() {
-        return this.client.getTelemetry(this.relationships.assets[0].attributes.URL);
+        return this.client.getTelemetry(
+            this.relationships.assets[0].attributes.URL
+        );
     }
 }
 
