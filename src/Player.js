@@ -27,7 +27,7 @@ class Player {
          * If the player contains full data or needs `.fetch()`
          * @type {boolean}
          */
-        this.full = true;
+        this.full = false;
 
         /**
          * Attributes of the Player
@@ -50,12 +50,15 @@ class Player {
          * @property {Array<Asset>} relationships.assets NOT IN API YET: Array of all assets of the player
          * @property {Array<Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
          */
-        this.relationships = {
-            assets: content.relationships.assets.data,
-            matches: content.relationships.matches.data.map(
-                m => new Match(m.id, this.client)
-            ),
-        };
+        if (content.relationships) {
+            this.relationships = {
+                assets: content.relationships.assets.data,
+                matches: content.relationships.matches.data.map(
+                    m => new Match(m.id, this.client)
+                ),
+            };
+            this.full = true;
+        }
     }
 
     /**
