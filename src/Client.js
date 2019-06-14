@@ -147,7 +147,11 @@ class Client {
                     player.attributes.shardId :
                     shard || this.defaultShard,
         })
-            .then(ps => new PlayerSeason(ps.data))
+            .then(ps => {
+                if (player instanceof Player) ps.data.relationships.player = new Player(_.omit(player, ['relationships']));
+
+                return new PlayerSeason(ps.data);
+            })
             .catch(e => {
                 throw e.message;
             });
