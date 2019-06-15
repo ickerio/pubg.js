@@ -5,7 +5,7 @@ const client = new pubg.Client(process.env.PUBG_KEY, 'steam');
 
 console.log(`Testing version ${pubg.version} of pubg.js`);
 
-const playerNames = [
+const sampleNames = [
   'Zaytt',
   'LEYED',
   'OGSule',
@@ -17,9 +17,8 @@ const playerNames = [
   'MrDiez86',
   'PL4sTiKGirL'
 ];
-const playerNames2 = ['OGSule', 'MrDiez86'];
 
-const playerIds = [
+const sampleIds = [
   'account.ce33c4a1f98541068ec656d45b809cfe',
   'account.d6564d57590c4d90b45b0b1d0600df4b',
   'account.3998a66e64414acdb2f2b3c56f7c415f',
@@ -34,28 +33,21 @@ const playerIds = [
 
 const season = 'division.bro.official.pc-2018-03';
 
-// client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res));
-// client
-//   .getPlayerSeason(
-//     'account.ce33c4a1f98541068ec656d45b809cfe',
-//     'division.bro.official.pc-2018-03'
-//   )
-//   .then(res =>
-//     console.log(util.inspect(res, false, null, true /* enable colors */))
-//   );
+// Test getPlayer
+client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res));
 
-// client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res));
-// client
-//   .getPlayer({ id: playerIds })
-//   .then(
-//     async p =>
-//       await console.log(client.getManyPlayerSeason({ players: p }, season))
-//   );
+// Get the player ids and use the result to get their season
+client
+  .getPlayer({ id: playerIds })
+  .then(
+    async p =>
+      await console.log(client.getManyPlayerSeason({ players: p }, season))
+  );
 
+// Straight up search the players season using their names
 client
   .getManyPlayerSeason({ names: playerNames }, season)
   .then(
-    // res => console.log(util.inspect(res, false, null, true /* enable colors */))
-    // console.log(res)
+    res => console.log(util.inspect(res, false, null, true /* enable colors */))
   )
   .catch(e => console.log(e));
