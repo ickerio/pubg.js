@@ -1,6 +1,6 @@
 {
   "name": "pubg.js",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "description": "A powerful Playerunknown's Battlegrounds JavaScript API Wrapper",
   "main": "src/index.js",
   "scripts": {
@@ -28,11 +28,12 @@
   "homepage": "https://github.com/ickerio/pubg.js#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "lodash": "^4.17.11"
+    "lodash.merge": "^4.6.1",
+    "lodash.omit": "^4.5.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "jsdoc": "^3.5.5",
+    "jsdoc": "^3.6.2",
     "minami": "^1.2.3",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^3.11.0"

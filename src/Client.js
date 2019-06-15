@@ -1,5 +1,6 @@
 const axios = require('axios');
-const _ = require('lodash');
+const merge = require('lodash.merge');
+const omit = require('lodash.omit');
 
 const Package = require('../package.json');
 const Util = require('./util/Util');
@@ -148,7 +149,7 @@ class Client {
                     shard || this.defaultShard,
         })
             .then(ps => {
-                if (player instanceof Player) ps.data.relationships.player = new Player(_.omit(player, ['relationships']));
+                if (player instanceof Player) ps.data.relationships.player = new Player(omit(player, ['relationships']));
 
                 return new PlayerSeason(ps.data);
             })
@@ -206,12 +207,12 @@ class Client {
             return playersArray.map(player => {
                 let playerSeason = {};
                 GAME_MODES.forEach(mode => {
-                    _.merge(
+                    merge(
                         playerSeason,
                         gameModeStats[mode].find(ps => ps.relationships.player.data.id === player.id)
                     );
                 });
-                playerSeason.relationships.player = player;
+                playerSeason.relationships.player = new Player(omit(player, ['relationships']));
                 return new PlayerSeason(playerSeason);
             });
         }
