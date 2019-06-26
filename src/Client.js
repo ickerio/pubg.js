@@ -130,7 +130,10 @@ class Client {
     }
 
     /**
-     * Get a player season object. When providing a Player Obj for [player], the PlayerSeason will include the full fetched player in relationships.player. Otherwise, it will just be a reference to the player id and will need .fetch() for its info to be complete.
+     * Get a player season object. 
+     * When providing a Player Obj for [player], the PlayerSeason will include the 
+     * full fetched player in relationships.player. Otherwise, it will just be a 
+     * reference to the player id and will need .fetch() for its info to be complete.
      * @param {(string|Player)} player The player of the player season
      * @param {(string|Season)} season The season of the player season
      * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
@@ -158,8 +161,9 @@ class Client {
 
     /**
      * Get an array of up to 10 player season objects.
-     * For PUBG API calls optimization, method will use the regular getPlayerSeason() function when fetching for less than 6 players.
-     * This function is meant to retrieve more than one Player Season. 
+     * For PUBG API calls optimization, method will use the regular 
+     * getPlayerSeason() function when fetching for less than 6 players.
+     * This function is meant to retrieve more than one Player Season.
      * For a single player better use getPlayerSeason()
      * This method will always return fully fetched Player Objects in .relatioships.player
      * @param {Object} args Specify what player to get
