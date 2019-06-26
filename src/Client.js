@@ -1,6 +1,5 @@
 const axios = require('axios');
 const merge = require('lodash.merge');
-const omit = require('lodash.omit');
 
 const Package = require('../package.json');
 const Util = require('./util/Util');
@@ -131,7 +130,7 @@ class Client {
     }
 
     /**
-     * Get a player season object
+     * Get a player season object. When providing a Player Obj for [player], the PlayerSeason will include the full fetched player in relationships.player. Otherwise, it will just be a reference to the player id and will need .fetch() for its info to be complete.
      * @param {(string|Player)} player The player of the player season
      * @param {(string|Season)} season The season of the player season
      * @param {string} [shard=player.attributes.shardId|this.defaultShard] The server shard to send the request to
@@ -142,15 +141,14 @@ class Client {
         return this._baseRequest({
             endpoint: `players/${
                 player instanceof Player ? player.id : player
-            }/seasons/${season instanceof Season ? season.id : season}`,
+                }/seasons/${season instanceof Season ? season.id : season}`,
             shard:
                 player instanceof Player ?
                     player.attributes.shardId :
                     shard || this.defaultShard,
         })
             .then(ps => {
-                if (player instanceof Player) ps.data.relationships.player = new Player(omit(player, ['relationships']));
-
+                if (player instanceof Player) ps.data.relationships.player = player;
                 return new PlayerSeason(ps.data);
             })
             .catch(e => {
@@ -161,7 +159,9 @@ class Client {
     /**
      * Get an array of up to 10 player season objects.
      * For PUBG API calls optimization, method will use the regular getPlayerSeason() function when fetching for less than 6 players.
-     * This function is meant to retrieve more than one Player Season. For a single player use getPlayerSeason
+     * This function is meant to retrieve more than one Player Season. 
+     * For a single player better use getPlayerSeason()
+     * This method will always return fully fetched Player Objects in .relatioships.player
      * @param {Object} args Specify what player to get
      * * {ids: ['id1', 'id2']}
      * * {names: ['name1', 'name2']}
@@ -185,7 +185,6 @@ class Client {
             args.names ?
                 await this.getPlayer({ name: args.names }, shard) :
                 args.players;
-
         if (playersArray.length < 6) {
             return Promise.all(
                 playersArray.map(player =>
@@ -212,7 +211,7 @@ class Client {
                         gameModeStats[mode].find(ps => ps.relationships.player.data.id === player.id)
                     );
                 });
-                playerSeason.relationships.player = new Player(omit(player, ['relationships']));
+                playerSeason.relationships.player = player;
                 return new PlayerSeason(playerSeason);
             });
         }

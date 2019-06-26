@@ -18,6 +18,12 @@ const sampleNames = [
   'PL4sTiKGirL'
 ];
 
+const sampleNames2 = [
+  'Zaytt',
+  'LEYED',
+  'OGSule'
+];
+
 const sampleIds = [
   'account.ce33c4a1f98541068ec656d45b809cfe',
   'account.d6564d57590c4d90b45b0b1d0600df4b',
@@ -34,19 +40,14 @@ const sampleIds = [
 const season = 'division.bro.official.pc-2018-03';
 
 // Test getPlayer
-client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res));
+// client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res));
 
-// Get the player ids and use the result to get their season
-client
-  .getPlayer({ id: playerIds })
-  .then(
-    async p =>
-      await console.log(client.getManyPlayerSeason({ players: p }, season))
-  );
+client.getPlayerSeason('account.c0e530e9b7244b358def282782f893af', season)
+  .then(res => console.log(util.inspect(res, false, null, true /* enable colors */)))
 
 // Straight up search the players season using their names
 client
-  .getManyPlayerSeason({ names: playerNames }, season)
+  .getManyPlayerSeason({ names: sampleNames }, season)
   .then(
     res => console.log(util.inspect(res, false, null, true /* enable colors */))
   )

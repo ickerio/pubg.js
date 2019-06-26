@@ -9,11 +9,11 @@ const Season = require('../Season');
  */
 class PlayerSeason {
     constructor(content, client) {
-    /**
-     * Attributes of the PlayerSeason
-     * @type {Object}
-     * @property {Object} attributes.gameModeStats An object full of all game mode types being `duo`, `duoFPP`, `solo`, `soloFPP`, `squad`, `squadFPP`
-     */
+        /**
+         * Attributes of the PlayerSeason
+         * @type {Object}
+         * @property {Object} attributes.gameModeStats An object full of all game mode types being `duo`, `duoFPP`, `solo`, `soloFPP`, `squad`, `squadFPP`
+         */
         this.attributes = {
             gameModeStats: {
                 duo: new GameModeStats(content.attributes.gameModeStats.duo),
@@ -42,10 +42,10 @@ class PlayerSeason {
      * @property {Season} relationships.season All solo matches played during the season by the player
      */
         this.relationships = {
-            player:
-        content.relationships.player instanceof Player ?
-            content.relationships.player :
-            new Player(content.relationships.player.data.id, client),
+            player: content.relationships.player instanceof Player ?
+                content.relationships.player :
+                new Player(content.relationships.player.data.id, client),
+
             matchesSolo: content.relationships.matchesSolo.data.map(
                 m => new Match(m.id, this.client)
             ),

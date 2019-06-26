@@ -17,6 +17,8 @@ class Player {
             return;
         }
 
+        this.full = true;
+
         /**
          * API id of the player
          * @type {string}
@@ -43,22 +45,18 @@ class Player {
             patchVersion: content.attributes.patchVersion,
             titleId: content.attributes.titleId,
         };
-
         /**
          * References to resource objects related to this player
          * @type {Object}
          * @property {Array<Asset>} relationships.assets NOT IN API YET: Array of all assets of the player
          * @property {Array<Match>} relationships.matches Array of empty Match classes, will need `.fetch()`
          */
-        if (content.relationships) {
-            this.relationships = {
-                assets: content.relationships.assets.data,
-                matches: content.relationships.matches.data.map(
-                    m => new Match(m.id, this.client)
-                ),
-            };
-            this.full = true;
-        }
+        this.relationships = {
+            assets: content.relationships.assets.data,
+            matches: content.relationships.matches.data.map(
+                m => new Match(m.id, this.client)
+            ),
+        };
     }
 
     /**
