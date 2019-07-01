@@ -40,15 +40,28 @@ const sampleIds = [
 const season = 'division.bro.official.pc-2018-03';
 
 // Test getPlayer
-// client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res));
+client.getPlayer({ name: 'Zaytt' }).then(res => console.log(res)).catch(e => console.log(e));
 
 client.getPlayerSeason('account.c0e530e9b7244b358def282782f893af', season)
-  .then(res => console.log(util.inspect(res, false, null, true /* enable colors */)))
+  .then(res => console.log(util.inspect(res, false, null, true /* enable colors */))).catch(e => console.log(e))
 
 // Straight up search the players season using their names
 client
-  .getManyPlayerSeason({ names: sampleNames }, season)
+  .getManyPlayerSeason({ names: sampleNames2 }, season)
   .then(
-    res => console.log(util.inspect(res, false, null, true /* enable colors */))
+    // res => console.log(util.inspect(res, false, null, true /* enable colors */))
+  )
+  .catch(e => console.log(e));
+
+client
+  .getManyPlayerSeason({ names: sampleNames2 }, season)
+  .then(
+    // res => console.log(util.inspect(res, false, null, true /* enable colors */))
+  )
+  .catch(e => console.log(e));
+client
+  .getManyPlayerSeason({ names: sampleNames2 }, season)
+  .then(
+    // res => console.log(util.inspect(res, false, null, true /* enable colors */))
   )
   .catch(e => console.log(e));

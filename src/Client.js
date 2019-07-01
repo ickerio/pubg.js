@@ -196,7 +196,7 @@ class Client {
                 )
             )
                 .then(psArray => psArray)
-                .catch(e => { throw e.message; });
+                .catch(e => { throw e });
         } else {
             let gameModeStats = {};
 
@@ -205,7 +205,7 @@ class Client {
                 params: { 'filter[playerIds]': playersArray.map(p => p.id).join() },
                 shard: shard || this.defaultShard,
             }).then(psArray => { gameModeStats[mode] = psArray.data; })))
-                .catch(e => { throw e.message; });
+                .catch(e => { throw e; });
 
             return playersArray.map(player => {
                 let playerSeason = {};
@@ -231,10 +231,7 @@ class Client {
     getMatch(id, shard = this.defaultShard) {
         if (typeof id !== 'string' || typeof shard !== 'string') throw new Error('Requires (string, !string)');
         return this._baseRequest({ endpoint: `matches/${id}`, shard })
-            .then(match => new Match(match.data, this, match.included))
-            .catch(e => {
-                throw e.message;
-            });
+            .catch(e => { throw e.message; });
     }
 
     /**
