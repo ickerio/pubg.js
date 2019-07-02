@@ -231,6 +231,7 @@ class Client {
     getMatch(id, shard = this.defaultShard) {
         if (typeof id !== 'string' || typeof shard !== 'string') throw new Error('Requires (string, !string)');
         return this._baseRequest({ endpoint: `matches/${id}`, shard })
+            .then(match => new Match(match.data, this, match.included))
             .catch(e => { throw e.message; });
     }
 
