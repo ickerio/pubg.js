@@ -15,6 +15,7 @@ class PlayerSeason {
          * @property {Object} attributes.gameModeStats An object full of all game mode types being `duo`, `duoFPP`, `solo`, `soloFPP`, `squad`, `squadFPP`
          */
         this.attributes = {
+            bestRankPoint: content.attributes.bestRankPoint
             gameModeStats: {
                 duo: new GameModeStats(content.attributes.gameModeStats.duo),
                 duoFPP: new GameModeStats(content.attributes.gameModeStats['duo-fpp']),
