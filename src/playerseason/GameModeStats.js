@@ -195,6 +195,12 @@ class GameModeStats {
          * @type {string}
          */
         this.rankPoints = content.rankPoints;
+        
+        /**
+         * Rank title in the form title-level
+         * @type {string}
+         */
+        this.rankPointsTitle = content.rankPointsTitle;
 
         /**
          * Distance player has swam
