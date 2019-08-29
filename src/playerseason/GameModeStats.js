@@ -179,12 +179,6 @@ class GameModeStats {
         this.wins = content.wins;
 
         /**
-         * Unknown
-         * @type {string}
-         */
-        this.bestRankPoint = content.bestRankPoint;
-
-        /**
          * Wins gained within the last 24 hours
          * @type {string}
          */
@@ -195,6 +189,12 @@ class GameModeStats {
          * @type {string}
          */
         this.rankPoints = content.rankPoints;
+        
+        /**
+         * Rank title in the form of title-level
+         * @type {string}
+         */
+        this.rankPointsTitle = content.rankPointsTitle;
 
         /**
          * Distance player has swam
