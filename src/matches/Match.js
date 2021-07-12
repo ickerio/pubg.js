@@ -13,6 +13,11 @@ class Match {
          */
         Object.defineProperty(this, 'client', { value: client });
 
+        // Exit if there is no match data present
+        if (typeof content === 'undefined') {
+            return;
+        }
+        
         if (typeof content === 'string') {
             this.id = content;
             this.full = false;
