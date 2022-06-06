@@ -52,6 +52,7 @@ class Match {
          * @property {Object} attributes.tags N/A
          * @property {string} attributes.titleId Identifies the studio and game
          * @property {string} attributes.seasonState State of the season
+         * @property {string} attributes.matchType Type of match
          */
         this.attributes = {
             createdAt: new Date(content.attributes.createdAt),
@@ -65,6 +66,7 @@ class Match {
             tags: content.attributes.tags,
             titleId: content.attributes.titleId,
             seasonState: content.attributes.seasonState,
+            matchType: content.attributes.matchType,
         };
 
         /**
