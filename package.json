@@ -36,6 +36,6 @@
     "jsdoc": "^3.6.2",
     "minami": "^1.2.3",
     "uglifyjs-webpack-plugin": "^1.2.5",
-    "webpack": "^3.11.0"
+    "webpack": "^5.75.0"
   }
 }
